@@ -1,0 +1,51 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100svh;
+    width: 100%;
+    perspective: 1000px;
+}
+.cubee{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border: 2px solid black;
+    display: flex;
+    background-color: blue;
+    position: relative;
+    animation: myanimations 4s linear;
+    transform-style: preserve-3d;
+}
+@keyframes myanimations {
+    100%{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+} 
+.front div{
+    
+       position: absolute;
+       width:22px;
+       height:22px;
+       background-color: yellow;
+       grid-template-rows: 1fr 1fr 1fr;
+       grid-template-columns: 1fr 1fr 1fr;
+}
+.box1{
+     grid-row: 3;
+}
+.left{
+    transform: rotateY(90deg) translateZ(100px);
+}
+.right{
+    transform: rotateY(90deg) translateZ(-100px);
+}
+.top{
+    transform: rotateX(90deg) translateZ(-100px);
+}
+.bottom{
+    transform: rotateX(90deg) translateZ(100px);
+}
+.back{
+    transform: translatez(-100px);
+}

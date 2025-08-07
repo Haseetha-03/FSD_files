@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #191b1a;
+  background-color: #e6eae5; /* Default background for the page */
+  line-height: 1.8;
+}
+
+h1,
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+/* Base styles for all sections */
+.section {
+  padding: 60px 20px;
+  width: 100%; /* Ensure section takes full width of viewport */
+  position: relative; /* Needed for overlays and positioning */
+  overflow: hidden; /* Helps contain children and background */
+
+  /* Common background image properties for all sections */
+  background-size: cover; /* Image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+
+  /* Flexbox for centering content within the full-width section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* For text alignment within the content container */
+}
+
+/* Overlay for sections (always applied as a semi-transparent layer) */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Default overlay: adjust as needed per section */
+  z-index: 1; /* Place overlay above background image, below content */
+}
+
+/* Inner container for section content to keep it centered and max-width */
+.section-content {
+    max-width: 1100px; /* Limits the content width */
+    width: 100%; /* Ensures it takes full width up to max-width */
+    margin: 0 auto; /* Centers the content */
+    position: relative; /* Ensure content is above any background/overlay */
+    z-index: 2; /* Content higher than overlay */
+    color: inherit; /* Inherit text color from section for overall contrast */
+}
+
+
+/* Hero Section - unique structure, so keeping its styles separate */
+.hero {
+  height: 90vh;
+  background: url('https://ncfarmlink.ces.ncsu.edu/wp-content/uploads/2021/02/sunset-farmer-1024x576.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  /* z-index removed as we're not using ::before for background here */
+}
+
+.overlay { /* This is the specific overlay for the hero section */
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  /* z-index removed as it's directly applied to an overlay element, not ::before */
+}
+
+.hero-text {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  max-width: 700px;
+  animation: slideUp 2s ease-out forwards;
+  opacity: 0;
+  z-index: 1; /* Ensures hero-text is above the specific hero overlay */
+  font-family: 'Playfair Display', serif;
+}
+
+.animate-text {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: inherit; /* Inherit color from parent (.section-content) for better contrast control */
+}
+
+/* Story Section */
+.story {
+  background-image: url('https://organicabiotech.com/wp-content/uploads/2021/10/organic-farming-min.jpg'); /* YOUR STORY BACKGROUND IMAGE */
+  color: #ffffff; /* Text color for this section to contrast with dark background/overlay */
+}
+.story::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text readability */
+}
+
+
+/* Mission Section */
+.mission {
+  background-image: url('https://thumbs.dreamstime.com/b/happy-farmer-middle-green-organic-rice-farm-lifestyle-young-asia-thai-tradition-custome-smiling-face-146983070.jpg'); /* YOUR MISSION BACKGROUND IMAGE */
+  color: #191b1a; /* Adjust text color as needed for this background */
+}
+.mission::before {
+  background-color: rgba(255, 255, 255, 0.3); /* Lighter overlay for darker text */
+}
+
+
+/* Features Section */
+.features-section {
+  background-image: url('https://organicabiotech.com/wp-content/uploads/2021/10/organic-farming-min.jpg'); /* YOUR FEATURES BACKGROUND IMAGE */
+  color: #ffffff; /* Text color for this section */
+}
+.features-section::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0; /* Add padding to grid to prevent cards touching edges */
+}
+
+.feature-card {
+  background: #ffffff; /* Keep card background white */
+  border-left: 5px solid #4caf50;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  color: #191b1a; /* Ensure text inside cards is dark */
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Values Section */
+.values {
+  background-image: url('https://organicabiotech.com/wp-content/uploads/2021/10/organic-farming-min.jpg'); /* YOUR VALUES BACKGROUND IMAGE */
+  color: #191b1a; /* Text color for this section */
+}
+.values::before {
+  background-color: rgba(255, 255, 255, 0.4); /* Lighter overlay */
+}
+
+
+/* CTA Section */
+.cta {
+  background-image: url('https://organicabiotech.com/wp-content/uploads/2021/10/organic-farming-min.jpg'); /* YOUR CTA BACKGROUND IMAGE */
+  color: #ffffff; /* Recommended: white text if background is potentially dark */
+}
+.cta::before {
+  background-color: rgba(0, 0, 0, 0.3); /* Slightly dark overlay */
+}
+
+.cta .btn {
+  background: #dde7e1;
+  color: #3c6e47;
+  padding: 14px 28px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.cta .btn:hover {
+  background: #658f79;
+}
+
+footer {
+  text-align: center;
+  background: #425d48;
+  color: #ffffff;
+  padding: 25px;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    max-width: 90%;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+}

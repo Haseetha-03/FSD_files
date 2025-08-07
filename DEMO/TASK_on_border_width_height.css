@@ -1,0 +1,18 @@
+.parent{
+    width: 200px;
+    height: 200px;
+    border-top: 2px solid green;
+    border-right: 2px dotted red;
+    border-bottom: 2px groove pink;
+    border-left: 2px dashed rgb(9, 28, 238);
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background-color: beige;
+}
+.child{
+    width: calc(100% - 50%);
+    height: calc(100% - 50%);
+    border: 2px solid rgb(241, 10, 33);
+    border-radius: 100%;
+    background-color: rgb(43, 226, 128);
+}

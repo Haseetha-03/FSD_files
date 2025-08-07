@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jsmenubar.css">
+</head>
+ 
+<body>
+    <div class="menu">
+      <button  onclick="closebar()">&#19977</button>
+      <div>home</div>
+      <div>to</div>
+      <div>contact</div>
+      <div>aboutus</div>
+
+    </div>
+     <script>
+      function closebar(){
+        document.getElementsByClassName("menu")[0].style="left: -100px"
+      }
+      function openbar(){
+        document.getElementsByClassName("menu")[0].style="right:100px"
+      }
+  </script>
+</body>
+</html>

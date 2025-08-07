@@ -1,0 +1,25 @@
+h1{
+    text-shadow: 2px 3px pink;
+}
+.para-1{
+    color: blue;
+    background-color: beige;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.para-2{
+    background-color: bisque;
+    text-decoration: underline rgb(174, 3, 3) dashed 2px;
+}
+.para-3{
+    background-color: pink;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.para-4{
+    background-color: burlywood;
+    text-transform: uppercase;
+    line-height: 30px;
+    text-indent: 40px;
+}

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriAssist - Apiculture Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="change.css">
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-green-700 text-white p-4 shadow-lg w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold">AgriAssist</a>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="px-3 py-2 rounded-md hover:bg-green-600">Home</a>
+                <a href="#agriculture" class="px-3 py-2 rounded-md hover:bg-green-600">Agriculture</a>
+                <a href="#weather" class="px-3 py-2 rounded-md hover:bg-green-600">Weather</a>
+                <a href="#marketplace" class="px-3 py-2 rounded-md hover:bg-green-600">Market Place</a>
+                <a href="#contact" class="px-3 py-2 rounded-md hover:bg-green-600">Contact Us</a>
+                <a href="#login" class="px-3 py-2 rounded-md hover:bg-green-600">Login / Register</a>
+                <div class="relative group ml-4">
+                    <button class="px-3 py-2 rounded-md flex items-center hover:bg-green-600">
+                        <i class="fa-solid fa-globe mr-2 text-sm"></i> Language <i class="fa-solid fa-chevron-down ml-2 text-sm"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-green-800 text-white rounded-md shadow-lg mt-2 w-32 right-0">
+                        <button class="block w-full text-left px-4 py-2 hover:bg-green-600 rounded-t-md">English</button>
+                        <button class="block w-full text-left px-4 py-2 hover:bg-green-600">Hindi</button>
+                    </div>
+                </div>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden mt-4 bg-green-800 rounded-md shadow-lg">
+            <a href="#home" class="block px-4 py-2 text-white hover:bg-green-600 rounded-t-md">Home</a>
+            <a href="#agriculture" class="block px-4 py-2 text-white hover:bg-green-600">Agriculture</a>
+            <a href="#aquaculture" class="block px-4 py-2 text-white hover:bg-green-600">Aquaculture</a>
+            <a href="#poultry" class="block px-4 py-2 text-white hover:bg-green-600">Poultry</a>
+            <a href="#organic" class="block px-4 py-2 text-white hover:bg-green-600">Organic Farming</a>
+            <a href="#apiculture" class="block px-4 py-2 text-white hover:bg-green-600">Apiculture</a>
+            <a href="#sericulture" class="block px-4 py-2 text-white hover:bg-green-600">Sericulture</a>
+            <a href="#weather" class="block px-4 py-2 text-white hover:bg-green-600">Weather</a>
+            <a href="#marketplace" class="block px-4 py-2 text-white hover:bg-green-600">Market Place</a>
+            <a href="#contact" class="block px-4 py-2 text-white hover:bg-green-600">Contact Us</a>
+            <a href="#login" class="block px-4 py-2 text-white hover:bg-green-600 rounded-b-md">Login / Register</a>
+            <button class="block w-full text-left px-4 py-2 text-white hover:bg-green-600">English</button>
+            <button class="block w-full text-left px-4 py-2 text-white hover:bg-green-600">Hindi</button>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-16"> 
+        <section id="apiculture-management" class="page-section active bg-gray-50 py-8">
+            <div class="container mx-auto px-4">
+                <div class="hero-overlay absolute inset-0"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row items-center w-full">
+                        <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 animate-slideInUp">
+                            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight drop-shadow-lg text-green-200">
+                                AI-Powered Apiculture Management
+                            </h1>
+                            <p class="text-lg md:text-xl mb-8 opacity-90">
+                                Optimize your beekeeping practices with AI-driven insights for hive health, honey production, and pollination.
+                            </p>
+                            <button id="manage-hives-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg shadow-green-500/50">
+                                Manage Hives
+                            </button>
+                        </div>
+                        <div class="md:w-1/2 flex justify-center items-center animate-fadeIn" style="animation-delay: 0.3s;">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzD1JpdcqGpzEL1069Owz_1QnEYEAohc4rYw&s" alt="AI Apiculture Management" class="rounded-xl shadow-xl max-w-full h-auto">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 0.2s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-honey-pot text-green-600 mr-3"></i> Select Bee Type
+                    </h2>
+                    <div class="max-w-md mx-auto space-y-4">
+                        <div>
+                            <label for="bee-type" class="block text-gray-700 text-sm font-bold mb-2">Choose your bee type:</label>
+                            <select id="bee-type" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                                <option value="">Select Bee Type</option>
+                                <option value="apis-mellifera">Apis Mellifera</option>
+                                <option value="apis-cerana">Apis Cerana</option>
+                                <option value="bumblebee">Bumblebee</option>
+                                <option value="stingless-bee">Stingless Bee</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 0.3s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-hive text-green-600 mr-3"></i> Select Hive Status
+                    </h2>
+                    <div class="max-w-md mx-auto space-y-4">
+                        <label for="hive-status" class="block text-gray-700 text-sm font-bold mb-2">What is the current status of your hive?</label>
+                        <select id="hive-status" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                            <option value="">Select Status</option>
+                            <option value="brood-rearing">Brood Rearing</option>
+                            <option value="honey-flow">Honey Flow</option>
+                            <option value="swarming">Swarming</option>
+                            <option value="wintering">Wintering</option>
+                            <option value="queenless">Queenless</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 0.4s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-camera-bee text-green-600 mr-3"></i> Upload Image for Hive Health Analysis
+                    </h2>
+                    <div id="hive-health-upload-area" class="dashed-border rounded-lg p-12 text-center cursor-pointer hover:bg-gray-50 transition-all duration-200 mb-8">
+                        <input type="file" id="hive-health-image-upload" accept="image/jpeg,image/png,image/webp" class="hidden">
+                        <label for="hive-health-image-upload" class="cursor-pointer block">
+                            <i class="fa-solid fa-image text-green-500 text-7xl mb-4"></i>
+                            <p class="text-gray-700 text-lg font-medium">Drag & Drop Hive/Bee Image Here, or <span class="text-green-600 font-semibold">Click to Browse</span></p>
+                            <p class="text-gray-500 text-sm mt-2">Supported formats: JPG, PNG, WebP. Max file size: 5MB. For best results, upload clear, well-lit images of bees, comb, or hive parts.</p>
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <img id="hive-health-uploaded-image-preview" src="https://placehold.co/400x250/c8e6c9/333?text=Uploaded+Hive+Image" alt="Hive Health Image Preview" class="max-w-full h-auto rounded-lg shadow-md mx-auto mb-6">
+                        <button id="analyze-hive-health-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full text-xl transition-all duration-300 shadow-lg shadow-green-500/50 flex items-center justify-center mx-auto">
+                            <span id="hive-health-button-text">Analyze Hive Health</span>
+                            <div id="hive-health-loading-spinner" class="spinner ml-3 hidden"></div>
+                        </button>
+                    </div>
+                </section>
+
+                <section id="hive-health-results-section" class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 0.6s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-microscope text-green-600 mr-3"></i> Hive Health Analysis Result
+                    </h2>
+                    <div class="bg-green-50 p-6 rounded-lg shadow-inner border border-green-200 text-center">
+                        <h3 id="detected-hive-issue-name" class="text-4xl font-extrabold text-green-800 mb-2">Varroa Mite Infestation</h3>
+                        <p class="text-xl text-gray-700 mb-4">Confidence: <span id="hive-confidence-score" class="font-semibold text-green-700">85%</span></p>
+                        <p id="hive-issue-description" class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-6">Varroa mites are external parasites that attack honey bees, weakening colonies and transmitting viruses. Early detection is crucial for effective management.</p>
+                        <img src="https://placehold.co/400x250/e0ffe0/333?text=Varroa+Mite+Example" alt="Example of Varroa Mite Infestation" class="max-w-full h-auto rounded-lg shadow-md mx-auto mt-4">
+                    </div>
+                </section>
+
+                <section id="hive-recommendations-section" class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 0.8s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-hand-holding-medical text-green-600 mr-3"></i> Hive Health Management & Prevention
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-green-700 mb-4">Immediate Treatment:</h3>
+                            <ul id="immediate-hive-treatment-list" class="list-none space-y-3 text-gray-700">
+                                <li><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Apply approved miticides (e.g., oxalic acid, formic acid) as per guidelines.</li>
+                                <li><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Powdered sugar dusting to dislodge mites.</li>
+                                <li><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Consider drone brood removal.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-green-700 mb-4">Long-term Prevention:</h3>
+                            <ul id="long-term-hive-prevention-list" class="list-none space-y-3 text-gray-700">
+                                <li><i class="fa-solid fa-shield-alt text-green-500 mr-2"></i> Regular hive inspections for mite levels.</li>
+                                <li><i class="fa-solid fa-shield-alt text-green-500 mr-2"></i> Use screened bottom boards.</li>
+                                <li><i class="fa-solid fa-shield-alt text-green-500 mr-2"></i> Breed for Varroa-resistant bees.</li>
+                                <li><i class="fa-solid fa-shield-alt text-green-500 mr-2"></i> Maintain strong, healthy colonies.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p id="hive-further-action" class="text-lg text-gray-700 mt-8 text-center">For severe infestations or specific mite types, consult a local beekeeping association or apiary expert.</p>
+                </section>
+
+                <section class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 0.9s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-bug text-green-600 mr-3"></i> Upload Image for Pest/Predator Analysis
+                    </h2>
+                    <div id="pest-predator-upload-area" class="dashed-border rounded-lg p-12 text-center cursor-pointer hover:bg-gray-50 transition-all duration-200 mb-8">
+                        <input type="file" id="pest-predator-image-upload" accept="image/jpeg,image/png,image/webp" class="hidden">
+                        <label for="pest-predator-image-upload" class="cursor-pointer block">
+                            <i class="fa-solid fa-bug-slash text-green-500 text-7xl mb-4"></i>
+                            <p class="text-gray-700 text-lg font-medium">Drag & Drop Pest/Predator Image Here, or <span class="text-green-600 font-semibold">Click to Browse</span></p>
+                            <p class="text-gray-500 text-sm mt-2">Supported formats: JPG, PNG, WebP. Max file size: 5MB. For best results, upload clear, well-lit images of pests or predators near the hive.</p>
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <img id="pest-predator-uploaded-image-preview" src="https://placehold.co/400x250/c8e6c9/333?text=Uploaded+Pest+Image" alt="Pest/Predator Image Preview" class="max-w-full h-auto rounded-lg shadow-md mx-auto mb-6">
+                        <button id="analyze-pest-predator-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full text-xl transition-all duration-300 shadow-lg shadow-green-500/50 flex items-center justify-center mx-auto">
+                            <span id="pest-predator-button-text">Analyze Pest/Predator</span>
+                            <div id="pest-predator-loading-spinner" class="spinner ml-3 hidden"></div>
+                        </button>
+                    </div>
+                </section>
+
+                <section id="pest-predator-results-section" class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 1.0s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-chart text-green-600 mr-3"></i> Pest/Predator Analysis Result
+                    </h2>
+                    <div class="bg-green-50 p-6 rounded-lg shadow-inner border border-green-200 text-center">
+                        <h3 id="detected-pest-predator-name" class="text-4xl font-extrabold text-green-800 mb-2">Wax Moth Larvae</h3>
+                        <p class="text-xl text-gray-700 mb-4">Confidence: <span id="pest-predator-confidence-score" class="font-semibold text-green-700">90%</span></p>
+                        <p id="pest-predator-description" class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-6">Wax moths are common pests that damage honeycomb and stored bee equipment, especially in weak colonies or stored frames.</p>
+                        <img src="https://placehold.co/400x250/e0ffe0/333?text=Wax+Moth+Example" alt="Example of Wax Moth Larvae" class="max-w-full h-auto rounded-lg shadow-md mx-auto mt-4">
+                    </div>
+                </section>
+
+                <section id="pest-predator-recommendations-section" class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 1.1s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-spray-can text-green-600 mr-3"></i> Pest/Predator Management
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-green-700 mb-4">Control Measures:</h3>
+                            <ul id="pest-predator-control-list" class="list-none space-y-3 text-gray-700">
+                                <li><i class="fa-solid fa-bug-slash text-green-500 mr-2"></i> Freeze infested combs for 24-48 hours to kill larvae and eggs.</li>
+                                <li><i class="fa-solid fa-bug-slash text-green-500 mr-2"></i> Maintain strong colonies that can defend against pests.</li>
+                                <li><i class="fa-solid fa-bug-slash text-green-500 mr-2"></i> Use moth traps or Bacillus thuringiensis (Bt) for severe cases.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-green-700 mb-4">Preventive Strategies:</h3>
+                            <ul id="pest-predator-prevention-list" class="list-none space-y-3 text-gray-700">
+                                <li><i class="fa-solid fa-shield-virus text-green-500 mr-2"></i> Store combs properly in airtight containers or well-ventilated areas.</li>
+                                <li><i class="fa-solid fa-shield-virus text-green-500 mr-2"></i> Ensure hives are healthy and robust.</li>
+                                <li><i class="fa-solid fa-shield-virus text-green-500 mr-2"></i> Keep apiary clean and free of debris.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p id="pest-predator-further-action" class="text-lg text-gray-700 mt-8 text-center">Implement integrated pest management (IPM) strategies and consult experienced beekeepers for persistent issues.</p>
+                </section>
+
+                <section class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 1.2s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-flower-tulip text-green-600 mr-3"></i> Forage Plant Recommendation
+                    </h2>
+                    <div class="max-w-xl mx-auto space-y-6">
+                        <div>
+                            <label for="forage-region" class="block text-gray-700 text-sm font-bold mb-2">Region for Forage:</label>
+                            <select id="forage-region" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                                <option value="">Select Region</option>
+                                <option value="tropical">Tropical</option>
+                                <option value="temperate">Temperate</option>
+                                <option value="arid">Arid</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="flowering-season" class="block text-gray-700 text-sm font-bold mb-2">Dominant Flowering Season:</label>
+                            <input type="text" id="flowering-season" placeholder="e.g., Spring, Summer" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                        <div>
+                            <label for="nectar-potential" class="block text-gray-700 text-sm font-bold mb-2">Nectar Flow Potential (1-5):</label>
+                            <input type="number" id="nectar-potential" min="1" max="5" placeholder="e.g., 4" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                        <div>
+                            <label for="pollen-potential" class="block text-gray-700 text-sm font-bold mb-2">Pollen Source Potential (1-5):</label>
+                            <input type="number" id="pollen-potential" min="1" max="5" placeholder="e.g., 3" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                        <div>
+                            <label for="water-availability" class="block text-gray-700 text-sm font-bold mb-2">Water Availability (1-5):</label>
+                            <input type="number" id="water-availability" min="1" max="5" placeholder="e.g., 5" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                        <div class="text-center">
+                            <button id="get-forage-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg shadow-green-500/50 flex items-center justify-center mx-auto">
+                                <span id="forage-button-text">Get Forage Recommendation</span>
+                                <div id="forage-loading-spinner" class="spinner ml-3 hidden"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="forage-results-section" class="bg-green-50 p-6 rounded-lg shadow-inner border border-green-200 text-center mt-8">
+                        <h3 class="text-2xl font-extrabold text-green-800 mb-2">Recommended Forage Plants:</h3>
+                        <p id="forage-recommendation-text" class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-4">Based on the inputs, consider planting Sunflower, Clover, and Lavender for excellent nectar and pollen sources. These plants thrive in various conditions and are highly attractive to bees.</p>
+                        <p class="text-sm text-gray-600">Local flora and climate variations may affect suitability.</p>
+                        <img src="https://placehold.co/400x250/c8e6c9/333?text=Forage+Plants" alt="Forage Plants Example" class="max-w-full h-auto rounded-lg shadow-md mx-auto mt-4">
+                    </div>
+                </section>
+
+                <section class="bg-white p-8 rounded-xl shadow-lg animate-slideInUp" style="animation-delay: 1.4s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-book-open text-green-600 mr-3"></i> Explore Bee Health Database / Common Issues
+                    </h2>
+                    <div class="mb-8 max-w-xl mx-auto">
+                        <div class="relative">
+                            <input type="text" id="bee-issue-search" placeholder="Search for bee diseases or hive issues..." class="w-full py-3 px-5 pr-12 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                            <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div id="bee-issue-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-green-50 p-6 rounded-lg shadow-md card-hover-effect border border-green-100">
+                            <i class="fa-solid fa-bug text-green-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-green-800 mb-2">Varroa Mites</h3>
+                            <p class="text-gray-700 text-sm">External parasites that weaken bees and transmit viruses.</p>
+                            <img src="https://placehold.co/200x120/c8e6c9/333?text=Varroa+Mites" alt="Varroa Mites" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-green-500 hover:bg-green-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-red-50 p-6 rounded-lg shadow-md card-hover-effect border border-red-100">
+                            <i class="fa-solid fa-bacteria text-red-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-red-800 mb-2">American Foulbrood</h3>
+                            <p class="text-gray-700 text-sm">Highly contagious bacterial disease affecting bee larvae.</p>
+                            <img src="https://placehold.co/200x120/e0c8c8/333?text=American+Foulbrood" alt="American Foulbrood" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-red-500 hover:bg-red-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-yellow-50 p-6 rounded-lg shadow-md card-hover-effect border border-yellow-100">
+                            <i class="fa-solid fa-microbe text-yellow-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-yellow-800 mb-2">Nosema Disease</h3>
+                            <p class="text-gray-700 text-sm">Fungal infection of the adult bee gut, causing dysentery.</p>
+                            <img src="https://placehold.co/200x120/ffe0c8/333?text=Nosema+Disease" alt="Nosema Disease" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-purple-50 p-6 rounded-lg shadow-md card-hover-effect border border-purple-100">
+                            <i class="fa-solid fa-skull-crossbones text-purple-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-purple-800 mb-2">Colony Collapse Disorder (CCD)</h3>
+                            <p class="text-gray-700 text-sm">Sudden disappearance of worker bees from a hive.</p>
+                            <img src="https://placehold.co/200x120/e0c8ff/333?text=CCD" alt="Colony Collapse Disorder" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-lg shadow-md card-hover-effect border border-orange-100">
+                            <i class="fa-solid fa-moth text-orange-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-orange-800 mb-2">Wax Moths</h3>
+                            <p class="text-gray-700 text-sm">Pests that tunnel through combs, destroying honey and pollen.</p>
+                            <img src="https://placehold.co/200x120/ffc8e0/333?text=Wax+Moths" alt="Wax Moths" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-orange-500 hover:bg-orange-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg shadow-md card-hover-effect border border-blue-100">
+                            <i class="fa-solid fa-cloud-arrow-up text-blue-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2">Swarming</h3>
+                            <p class="text-gray-700 text-sm">Natural process of colony reproduction, often misunderstood.</p>
+                            <img src="https://placehold.co/200x120/c8e0ff/333?text=Swarming" alt="Swarming" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-8 px-4 bg-gray-100 text-center rounded-xl shadow-lg mt-12">
+                    <a href="#home" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200">
+                        <i class="fa-solid fa-home mr-2"></i> Back to Home
+                    </a>
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-10 px-4 mt-auto">
+      
+    </footer>
+    </body>
+    </html>

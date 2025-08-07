@@ -1,0 +1,387 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Header */
+.header-gradient {
+    background: linear-gradient(to right, #6EE7B7, #3B82F6); /* Teal to Blue gradient */
+    color: white;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+    }
+}
+
+.site-title {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 700; /* bold */
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .site-title {
+        margin-bottom: 0;
+    }
+}
+
+.site-subtitle {
+    font-size: 1.25rem; /* xl */
+    font-weight: 400; /* normal */
+}
+
+.main-nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1.5rem; /* space-x-6 */
+    font-size: 1.125rem; /* lg */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 0.8); /* gray-200 */
+}
+
+/* Hero Section */
+.section-hero {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: #f9fafb; /* gray-50 */
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem; /* gap-12 */
+}
+
+@media (min-width: 1024px) {
+    .hero-container {
+        flex-direction: row;
+    }
+}
+
+.hero-image-wrapper {
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .hero-image-wrapper {
+        width: 50%; /* lg:w-1/2 */
+    }
+}
+
+.hero-image {
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero-content {
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        width: 50%; /* lg:w-1/2 */
+        text-align: left; /* lg:text-left */
+    }
+}
+
+.hero-title {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 700; /* bold */
+    color: #1a202c; /* gray-900 */
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    color: #4a5568; /* gray-700 */
+    font-size: 1.125rem; /* lg */
+    line-height: 1.75; /* leading-relaxed */
+    margin-bottom: 1rem;
+}
+
+/* Feature Icon (common to all feature cards) */
+.feature-icon {
+    font-size: 2.5rem; /* Larger icons */
+    color: #3B82F6; /* Blue color for icons */
+    margin-bottom: 1rem;
+}
+
+/* Carousel Section (Key Features) */
+.section-features-carousel {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: white;
+}
+
+.features-carousel-container {
+    min-height: 480px; /* Increased height for features carousel */
+    background-color: white; /* Ensure background for feature cards */
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0; /* border border-gray-200 */
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Ensure slides take full height */
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 2rem; /* Add padding inside slides */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.feature-card .feature-title {
+    font-size: 1.25rem; /* xl */
+    font-weight: 600; /* semibold */
+    color: #1a202c; /* gray-900 */
+    margin-bottom: 0.75rem;
+}
+
+.feature-card .feature-description {
+    color: #4a5568; /* gray-600 */
+    text-align: left;
+}
+
+
+/* Carousel Buttons */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker for visibility */
+    color: white;
+    border: none;
+    padding: 1.25rem 1.5rem; /* Larger buttons */
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 9999px; /* Full rounded */
+    font-size: 1.5rem; /* Larger arrow icons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1); /* Slight scale on hover */
+}
+
+.carousel-button-prev {
+    left: 1rem;
+}
+
+.carousel-button-next {
+    right: 1rem;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem; /* More space below carousel */
+    gap: 0.35rem; /* More space between indicators */
+}
+
+.indicator {
+    width: 1rem; /* Larger indicators */
+    height: 1rem; /* Larger indicators */
+    background-color: #94A3B8; /* Gray-400 */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.indicator.active {
+    background-color: #3B82F6; /* Blue-500 */
+    transform: scale(1.2); /* Active indicator slightly larger */
+}
+
+
+/* Key Features Section (Grid Layout) */
+.section-grid-features {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: white;
+}
+
+.section-title {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 700; /* bold */
+    color: #1a202c; /* gray-900 */
+    text-align: center;
+    margin-bottom: 3rem; /* mb-12 */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* col-1 */
+    gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+    }
+}
+
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+    }
+}
+
+.feature-card-grid {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    border: 1px solid #e2e8f0; /* border border-gray-200 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-card-grid:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card-grid .feature-title {
+    font-size: 1.25rem; /* xl */
+    font-weight: 600; /* semibold */
+    color: #1a202c; /* gray-900 */
+    margin-bottom: 0.75rem;
+}
+
+.feature-description-grid {
+    color: #4a5568; /* gray-600 */
+    text-align: left;
+}
+
+/* Call to Action Section */
+.call-to-action-section {
+    background: linear-gradient(to right, #6EE7B7, #3B82F6); /* gradient-bg */
+    color: white;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.call-to-action-title {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 700; /* bold */
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .call-to-action-title {
+        font-size: 2.25rem; /* 4xl */
+    }
+}
+
+.call-to-action-description {
+    font-size: 1.125rem; /* lg */
+    margin-bottom: 2rem;
+    max-width: 42rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .call-to-action-description {
+        font-size: 1.25rem; /* xl */
+    }
+}
+
+.contact-button {
+    background-color: white;
+    color: #2563eb; /* blue-600 */
+    font-weight: 600; /* semibold */
+    padding: 0.75rem 2rem; /* py-3 px-8 */
+    border-radius: 9999px; /* rounded-full */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background-color: #f3f4f6; /* gray-100 */
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer-section {
+    background-color: #1f2937; /* gray-800 */
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* space-x-4 */
+    margin-top: 1rem;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: rgba(255, 255, 255, 0.75); /* gray-300 */
+}

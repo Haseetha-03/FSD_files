@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FOODIE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️FOODIE</h1>
+    <p>Menu - Fresh & Affordable</p>
+  </header>
+  <section class="menu-section">
+    <h2>Main Canteen</h2>
+    <ul class="menu">
+      <li>Veg Biryani - ₹50</li>
+      <li>Chapati & Curry - ₹30</li>
+      <li class="sold-out">Curd Rice - ₹25 (Sold Out)</li>
+    </ul>
+  </section>
+
+  <section class="menu-section">
+    <h2>Tea Point</h2>
+    <ul class="menu">
+      <li>Tea - ₹10</li>
+      <li>Coffee - ₹15</li>
+      <li class="sold-out">Samosa - ₹12 (Sold Out)</li>
+    </ul>
+  </section>
+
+  <section class="menu-section">
+    <h2>Juice Corner</h2>
+    <ul class="menu">
+      <li>Orange Juice - ₹25</li>
+      <li class="sold-out">Grape Juice - ₹30 (Sold Out)</li>
+      <li>Lemon Soda - ₹20</li>
+    </ul>
+  </section>
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const items = document.querySelectorAll('.menu-item');
+
+    searchInput.addEventListener('keyup', function () {
+      const filter = searchInput.value.toLowerCase();
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(filter) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+
+  <footer>
+    <p>&copy; 2025 College Canteen. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #7a34ca;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+form{
+    text-align: center;
+    position: relative;
+    
+}
+
+.menu-section {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-section h2 {
+  color: #e85d04;
+}
+
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.menu li {
+  font-size: 18px;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.sold-out {
+  color: gray;
+  text-decoration: line-through;
+}
+
+footer {
+  text-align: center;
+  background-color: #b112b1;
+  color: white;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}

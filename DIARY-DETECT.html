@@ -1,0 +1,1709 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DairyAssist - Dairy Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffe9cc;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding-top: 4rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-video: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8-k50n_xBY7nghig6lts98doUXsgbviJ7JQ&s');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 0.75rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: #bf360c;
+            color: white;
+            text-decoration: none;
+            border-radius: 9999px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(191, 54, 12, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #992c0a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #bf360c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header i {
+            color: #bf360c;
+            animation: pulseIcon 1.5s ease-in-out infinite alternate;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            color: #374151;
+            font-size: 0.875rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: #bf360c;
+            box-shadow: 0 0 0 3px rgba(191, 54, 12, 0.2);
+        }
+
+        .form-container {
+            max-width: 28rem;
+            margin: 0 auto;
+        }
+
+        /* Upload Areas */
+        .upload-area {
+            border: 3px dashed #ffdec3;
+            border-radius: 0.5rem;
+            padding: 3rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .upload-area:hover {
+            border-color: #bf360c;
+            background-color: #fffaf4;
+        }
+
+        .upload-area i {
+            font-size: 4rem;
+            color: #bf360c;
+            margin-bottom: 1rem;
+        }
+
+        .upload-area p {
+            color: #374151;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-area .upload-hint {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .upload-area .highlight {
+            color: #bf360c;
+            font-weight: 600;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        /* Results Sections */
+        .result-box {
+            background-color: #fffaf4;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ffdec3;
+            text-align: center;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .result-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #bf360c;
+            margin-bottom: 0.5rem;
+        }
+
+        .confidence-score {
+            font-size: 1.25rem;
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+
+        .confidence-value {
+            font-weight: 600;
+            color: #992c0a;
+        }
+
+        .result-description {
+            font-size: 1.125rem;
+            color: #374151;
+            line-height: 1.8;
+            max-width: 48rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        /* Recommendation Lists */
+        .recommendation-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #bf360c;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation-list {
+            list-style: none;
+        }
+
+        .recommendation-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: #374151;
+        }
+
+        .recommendation-list i {
+            color: #bf360c;
+            margin-top: 0.125rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-orange { border-color: #ffdec3; background-color: #fffaf4; }
+        .card-yellow { border-color: #fef3c7; background-color: #fffbeb; }
+        .card-purple { border-color: #ddd6fe; background-color: #faf5ff; }
+        .card-red-orange { border-color: #fed7aa; background-color: #fff7ed; }
+        .card-blue { border-color: #bfdbfe; background-color: #eff6ff; }
+
+        .card i {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-orange h3 { color: #bf360c; }
+        .card-orange i { color: #bf360c; }
+        .card-orange .btn { background-color: #992c0a; }
+        .card-orange .btn:hover { background-color: #7a2307; }
+
+        .card-yellow h3 { color: #92400e; }
+        .card-yellow i { color: #d97706; }
+        .card-yellow .btn { background-color: #eab308; }
+        .card-yellow .btn:hover { background-color: #ca8a04; }
+
+        .card-purple h3 { color: #6b21a8; }
+        .card-purple i { color: #9333ea; }
+        .card-purple .btn { background-color: #9333ea; }
+        .card-purple .btn:hover { background-color: #7c3aed; }
+
+        .card-red-orange h3 { color: #9a3412; }
+        .card-red-orange i { color: #ea580c; }
+        .card-red-orange .btn { background-color: #ea580c; }
+        .card-red-orange .btn:hover { background-color: #dc2626; }
+
+        .card-blue h3 { color: #1e40af; }
+        .card-blue i { color: #2563eb; }
+        .card-blue .btn { background-color: #2563eb; }
+        .card-blue .btn:hover { background-color: #1d4ed8; }
+
+        /* Search */
+        .search-container {
+            max-width: 36rem;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 3rem 0.75rem 1.25rem;
+            border: 1px solid #d1d5db;
+            border-radius: 9999px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #bf360c;
+            box-shadow: 0 0 0 3px rgba(191, 54, 12, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin-left: 0.75rem;
+        }
+
+        .btn-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Back to Home Section */
+        .back-home {
+            background-color: #f3f4f6;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 2.5rem 1rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section p {
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #bf360c;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: #9ca3af;
+            font-size: 1.25rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseIcon {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .mobile-menu.open {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .upload-area {
+                padding: 2rem;
+            }
+
+            .upload-area i {
+                font-size: 3rem;
+            }
+
+            .result-title {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>AI-Powered Dairy Management</h1>
+                    <p>Optimize your dairy farm with AI-driven insights for herd health, milk quality, and productivity.</p>
+                    <button class="btn btn-large">Manage Herd</button>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-cow"></i> Select Animal Breed & Production Stage</h2>
+                </div>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="animal-breed" class="form-label">Choose your animal breed:</label>
+                        <select class="form-select">
+                            <option value="">Select Breed</option>
+                            <option value="holstein">Holstein</option>
+                            <option value="jersey">Jersey</option>
+                            <option value="sahiwal">Sahiwal</option>
+                            <option value="gir">Gir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="production-stage" class="form-label">What is the current production stage?</label>
+                        <select class="form-select">
+                            <option value="">Select Stage</option>
+                            <option value="lactating">Lactating</option>
+                            <option value="dry-period">Dry Period</option>
+                            <option value="heifer">Heifer</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-bottle-droplet"></i> Upload Image for Udder Health Analysis</h2>
+                </div>
+                <div class="upload-area">
+                    <input type="file" class="file-input" accept="image/jpeg,image/png,image/webp">
+                    <label style="cursor: pointer; display: block;">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <p>Drag & Drop Udder/Milk Sample Image Here, or <span class="highlight">Click to Browse</span></p>
+                        <p class="upload-hint">Supported formats: JPG, PNG, WebP. Max file size: 5MB. For best results, upload clear images of the udder or milk from the affected cow.</p>
+                    </label>
+                </div>
+                <div style="text-align: center;">
+                    <img src="" alt="Udder Health Image Preview" class="image-preview">
+                    <button class="btn btn-large">
+                        <span>Analyze Udder Health</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-chart-line"></i> Udder Health Result</h2>
+                </div>
+                <div class="result-box">
+                    <h3 class="result-title">Mastitis Detected</h3>
+                    <p class="confidence-score">Confidence: <span class="confidence-value">90%</span></p>
+                    <p class="result-description">Mastitis is an inflammation of the udder, typically caused by bacterial infection. It leads to reduced milk yield and poor quality. It's identified by a swollen, hot udder and often causes clots or flakes in the milk. Immediate veterinary attention is required.</p>
+                    <img src="https://i.ibb.co/6P6Xg2b/mastitis.jpg" alt="Example of Mastitis" class="image-preview">
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-syringe"></i> Treatment & Prevention</h2>
+                </div>
+                <div class="grid grid-2">
+                    <div class="recommendation-section">
+                        <h3>Immediate Treatment:</h3>
+                        <ul class="recommendation-list">
+                            <li><i class="fa-solid fa-check-circle"></i> Administer prescribed intramammary antibiotics.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Strip the affected quarter multiple times daily to flush out bacteria.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Consult a veterinarian for a definitive diagnosis and treatment plan.</li>
+                        </ul>
+                    </div>
+                    <div class="recommendation-section">
+                        <h3>Long-term Prevention:</h3>
+                        <ul class="recommendation-list">
+                            <li><i class="fa-solid fa-shield-alt"></i> Practice strict milking hygiene, including pre- and post-milking teat dips.</li>
+                            <li><i class="fa-solid fa-shield-alt"></i> Maintain a clean, dry environment in the barn and stalls.</li>
+                            <li><i class="fa-solid fa-shield-alt"></i> Ensure proper milking machine function and sanitation.</li>
+                            <li><i class="fa-solid fa-shield-alt"></i> Regularly monitor Somatic Cell Count (SCC) to detect subclinical mastitis early.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 2rem; font-size: 1.125rem; color: #374151;">For severe or persistent herd health issues, consult with a certified large animal veterinarian.</p>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-microscope"></i> Upload Image for Disease Analysis</h2>
+                </div>
+                <div class="upload-area">
+                    <input type="file" class="file-input" accept="image/jpeg,image/png,image/webp">
+                    <label style="cursor: pointer; display: block;">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <p>Drag & Drop Affected Cow/Symptom Image Here, or <span class="highlight">Click to Browse</span></p>
+                        <p class="upload-hint">Supported formats: JPG, PNG, WebP. Max file size: 5MB. For best results, upload clear images of the animal's physical symptoms or lesions.</p>
+                    </label>
+                </div>
+                <div style="text-align: center;">
+                    <img src="" alt="Disease Image Preview" class="image-preview">
+                    <button class="btn btn-large">
+                        <span>Analyze Disease</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-chart-line"></i> Disease Analysis Result</h2>
+                </div>
+                <div class="result-box">
+                    <h3 class="result-title">Foot-and-Mouth Disease Detected</h3>
+                    <p class="confidence-score">Confidence: <span class="confidence-value">88%</span></p>
+                    <p class="result-description">Foot-and-Mouth Disease (FMD) is a severe, highly contagious viral disease causing fever and blister-like sores on the tongue, mouth, teats, and hooves. It is a major economic threat and requires immediate government veterinary services notification.</p>
+                    <img src="https://i.ibb.co/3sX8p9t/fmd.jpg" alt="Example of Foot-and-Mouth Disease" class="image-preview">
+                </div>
+            </section>
+            
+            <section class="section"> 
+                <div class="section-header"> 
+                    <h2><i class="fa-solid fa-vials"></i> Milk Quality & Environment Assessment</h2> 
+                </div> 
+                <div class="form-container"> 
+                    <div class="form-group"> 
+                        <label for="scc" class="form-label">Somatic Cell Count (SCC) (cells/mL):</label> 
+                        <input type="number" step="1000" min="0" max="1000000" placeholder="e.g., 200,000" class="form-input"> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="bacteria-count" class="form-label">Bacteria Count (CFU/mL):</label> 
+                        <input type="number" step="100" min="0" max="100000" placeholder="e.g., 5,000" class="form-input"> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="fat-percent" class="form-label">Fat %:</label> 
+                        <input type="number" step="0.1" min="0" max="10" placeholder="e.g., 3.8" class="form-input"> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="protein-percent" class="form-label">Protein %:</label> 
+                        <input type="number" step="0.1" min="0" max="10" placeholder="e.g., 3.2" class="form-input"> 
+                    </div> 
+                    <div style="text-align: center;"> 
+                        <button class="btn btn-large"> 
+                            <span>Assess Milk & Environment</span> 
+                            <div class="spinner hidden"></div> 
+                        </button> 
+                    </div> 
+                </div> 
+                <div class="result-box" style="margin-top: 2rem;"> 
+                    <h3 style="font-size: 1.5rem; font-weight: 800; color: #bf360c; margin-bottom: 0.5rem;">Assessment Result:</h3> 
+                    <p class="result-description">The milk quality is **Excellent**, with a low Somatic Cell Count and bacteria count. The fat and protein percentages are within a desirable range. These results indicate a healthy herd and clean milking practices. Regular testing is recommended to maintain this quality.</p> 
+                    <p style="font-size: 0.875rem; color: #6b7280;">High-quality milk is a direct result of proper herd health and sanitation.</p> 
+                    <img src="https://i.ibb.co/V95wD71/dairy-lab.jpg" alt="Example of Milk Quality Testing" class="image-preview"> 
+                </div> 
+            </section> 
+
+            <section class="section"> 
+                <div class="section-header"> 
+                    <h2><i class="fa-solid fa-book-open-reader"></i> Explore Dairy Database / Common Issues</h2> 
+                </div> 
+                <div class="search-container"> 
+                    <input type="text" placeholder="Search for cattle diseases, nutrition, or management issues..." class="search-input"> 
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i> 
+                </div> 
+                <div class="grid grid-3"> 
+                    <div class="card card-orange"> 
+                        <i class="fa-solid fa-triangle-exclamation"></i> 
+                        <h3>Ketosis</h3> 
+                        <p>A metabolic disorder causing cows to have low blood sugar, often in early lactation.</p> 
+                        <img src="https://i.ibb.co/C0V4853/ketosis.jpg" alt="Ketosis"> 
+                        <button class="btn">Learn More</button> 
+                    </div> 
+                    <div class="card card-yellow"> 
+                        <i class="fa-solid fa-square-poll-vertical"></i> 
+                        <h3>Milk Fever</h3> 
+                        <p>A calcium deficiency in cows, usually occurring shortly after calving.</p> 
+                        <img src="https://i.ibb.co/rK5n58g/milk-fever.jpg" alt="Milk Fever"> 
+                        <button class="btn">Learn More</button> 
+                    </div> 
+                    <div class="card card-purple"> 
+                        <i class="fa-solid fa-pump-medical"></i> 
+                        <h3>Bloat</h3> 
+                        <p>Excessive gas buildup in the rumen, often from consuming lush legume pastures.</p> 
+                        <img src="https://i.ibb.co/Yd4Bw7L/bloat.jpg" alt="Bloat"> 
+                        <button class="btn">Learn More</button> 
+                    </div> 
+                    <div class="card card-red-orange"> 
+                        <i class="fa-solid fa-shoe-prints"></i> 
+                        <h3>Lameness</h3> 
+                        <p>A common issue in dairy cattle that affects mobility and productivity.</p> 
+                        <img src="https://i.ibb.co/3s6XkQZ/lameness.jpg" alt="Lameness"> 
+                        <button class="btn">Learn More</button> 
+                    </div> 
+                    <div class="card card-blue"> 
+                        <i class="fa-solid fa-virus"></i> 
+                        <h3>Bovine Viral Diarrhea</h3> 
+                        <p>A widespread and economically significant viral disease affecting cattle.</p> 
+                        <img src="https://i.ibb.co/BfL31q7/bvd.jpg" alt="Bovine Viral Diarrhea"> 
+                        <button class="btn">Learn More</button> 
+                    </div> 
+                </div> 
+            </section> 
+
+            <section class="back-home"> 
+                <a href="#home" class="btn"> 
+                    <i class="fa-solid fa-home" style="margin-right: 0.5rem;"></i> Back to Home 
+                </a> 
+            </section> 
+        </div> 
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DairyAssist</h3>
+                    <p>Your partner in modern dairy farming.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 DairyAssist. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DairyAssist - Dairy Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffe9cc;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding-top: 4rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 0.75rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Video styling to make it a background */
+        #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: #bf360c;
+            color: white;
+            text-decoration: none;
+            border-radius: 9999px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(191, 54, 12, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #992c0a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #bf360c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header i {
+            color: #bf360c;
+            animation: pulseIcon 1.5s ease-in-out infinite alternate;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            color: #374151;
+            font-size: 0.875rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: #bf360c;
+            box-shadow: 0 0 0 3px rgba(191, 54, 12, 0.2);
+        }
+
+        .form-container {
+            max-width: 28rem;
+            margin: 0 auto;
+        }
+
+        /* Upload Areas */
+        .upload-area {
+            border: 3px dashed #ffdec3;
+            border-radius: 0.5rem;
+            padding: 3rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .upload-area:hover {
+            border-color: #bf360c;
+            background-color: #fffaf4;
+        }
+
+        .upload-area i {
+            font-size: 4rem;
+            color: #bf360c;
+            margin-bottom: 1rem;
+        }
+
+        .upload-area p {
+            color: #374151;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-area .upload-hint {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .upload-area .highlight {
+            color: #bf360c;
+            font-weight: 600;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        /* Results Sections */
+        .result-box {
+            background-color: #fffaf4;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ffdec3;
+            text-align: center;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .result-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #bf360c;
+            margin-bottom: 0.5rem;
+        }
+
+        .confidence-score {
+            font-size: 1.25rem;
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+
+        .confidence-value {
+            font-weight: 600;
+            color: #992c0a;
+        }
+
+        .result-description {
+            font-size: 1.125rem;
+            color: #374151;
+            line-height: 1.8;
+            max-width: 48rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        /* Recommendation Lists */
+        .recommendation-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #bf360c;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation-list {
+            list-style: none;
+        }
+
+        .recommendation-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: #374151;
+        }
+
+        .recommendation-list i {
+            color: #bf360c;
+            margin-top: 0.125rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-orange { border-color: #ffdec3; background-color: #fffaf4; }
+        .card-yellow { border-color: #fef3c7; background-color: #fffbeb; }
+        .card-purple { border-color: #ddd6fe; background-color: #faf5ff; }
+        .card-red-orange { border-color: #fed7aa; background-color: #fff7ed; }
+        .card-blue { border-color: #bfdbfe; background-color: #eff6ff; }
+
+        .card i {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-orange h3 { color: #bf360c; }
+        .card-orange i { color: #bf360c; }
+        .card-orange .btn { background-color: #992c0a; }
+        .card-orange .btn:hover { background-color: #7a2307; }
+
+        .card-yellow h3 { color: #92400e; }
+        .card-yellow i { color: #d97706; }
+        .card-yellow .btn { background-color: #eab308; }
+        .card-yellow .btn:hover { background-color: #ca8a04; }
+
+        .card-purple h3 { color: #6b21a8; }
+        .card-purple i { color: #9333ea; }
+        .card-purple .btn { background-color: #9333ea; }
+        .card-purple .btn:hover { background-color: #7c3aed; }
+
+        .card-red-orange h3 { color: #9a3412; }
+        .card-red-orange i { color: #ea580c; }
+        .card-red-orange .btn { background-color: #ea580c; }
+        .card-red-orange .btn:hover { background-color: #dc2626; }
+
+        .card-blue h3 { color: #1e40af; }
+        .card-blue i { color: #2563eb; }
+        .card-blue .btn { background-color: #2563eb; }
+        .card-blue .btn:hover { background-color: #1d4ed8; }
+
+        /* Search */
+        .search-container {
+            max-width: 36rem;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 3rem 0.75rem 1.25rem;
+            border: 1px solid #d1d5db;
+            border-radius: 9999px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #bf360c;
+            box-shadow: 0 0 0 3px rgba(191, 54, 12, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin-left: 0.75rem;
+        }
+
+        .btn-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Back to Home Section */
+        .back-home {
+            background-color: #f3f4f6;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 2.5rem 1rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section p {
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #bf360c;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: #9ca3af;
+            font-size: 1.25rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseIcon {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .mobile-menu.open {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .upload-area {
+                padding: 2rem;
+            }
+
+            .upload-area i {
+                font-size: 3rem;
+            }
+
+            .result-title {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <video autoplay muted loop id="background-video">
+                    <source src="cow.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="hero-content">
+                    <h1>AI-Powered Dairy Management</h1>
+                    <p>Optimize your dairy farm with AI-driven insights for herd health, milk quality, and productivity.</p>
+                    <button class="btn btn-large">Manage Herd</button>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-cow"></i> Select Animal Breed & Production Stage</h2>
+                </div>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="animal-breed" class="form-label">Choose your animal breed:</label>
+                        <select class="form-select">
+                            <option value="">Select Breed</option>
+                            <option value="holstein">Holstein</option>
+                            <option value="jersey">Jersey</option>
+                            <option value="sahiwal">Sahiwal</option>
+                            <option value="gir">Gir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="production-stage" class="form-label">What is the current production stage?</label>
+                        <select class="form-select">
+                            <option value="">Select Stage</option>
+                            <option value="lactating">Lactating</option>
+                            <option value="dry-period">Dry Period</option>
+                            <option value="heifer">Heifer</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-bottle-droplet"></i> Upload Image for Udder Health Analysis</h2>
+                </div>
+                <div class="upload-area">
+                    <input type="file" class="file-input" accept="image/jpeg,image/png,image/webp">
+                    <label style="cursor: pointer; display: block;">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <p>Drag & Drop Udder/Milk Sample Image Here, or <span class="highlight">Click to Browse</span></p>
+                        <p class="upload-hint">Supported formats: JPG, PNG, WebP. Max file size: 5MB. For best results, upload clear images of the udder or milk from the affected cow.</p>
+                    </label>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq_q-9g912ae-No_vRMHPohBAMJzfT7ljBFw&s" alt="Udder Health Image Preview" class="image-preview">
+                    <button class="btn btn-large">
+                        <span>Analyze Udder Health</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-chart-line"></i> Udder Health Result</h2>
+                </div>
+                <div class="result-box">
+                    <h3 class="result-title">Mastitis Detected</h3>
+                    <p class="confidence-score">Confidence: <span class="confidence-value">90%</span></p>
+                    <p class="result-description">Mastitis is an inflammation of the udder, typically caused by bacterial infection. It leads to reduced milk yield and poor quality. It's identified by a swollen, hot udder and often causes clots or flakes in the milk. Immediate veterinary attention is required.</p>
+                    <img src="data:image/jpeg;base64,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" alt="Example of Mastitis" class="image-preview">
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-syringe"></i> Treatment & Prevention</h2>
+                </div>
+                <div class="grid grid-2">
+                    <div class="recommendation-section">
+                        <h3>Immediate Treatment:</h3>
+                        <ul class="recommendation-list">
+                            <li><i class="fa-solid fa-check-circle"></i> Administer prescribed intramammary antibiotics.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Strip the affected quarter multiple times daily to flush out bacteria.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Consult a veterinarian for a definitive diagnosis and treatment plan.</li>
+                        </ul>
+                    </div>
+                    <div class="recommendation-section">
+                        <h3>Long-term Prevention:</h3>
+                        <ul class="recommendation-list">
+                            <li><i class="fa-solid fa-shield-alt"></i> Practice strict milking hygiene, including pre- and post-milking teat dips.</li>
+                            <li><i class="fa-solid fa-shield-alt"></i> Maintain a clean, dry environment in the barn and stalls.</li>
+                            <li><i class="fa-solid fa-shield-alt"></i> Ensure proper milking machine function and sanitation.</li>
+                            <li><i class="fa-solid fa-shield-alt"></i> Regularly monitor Somatic Cell Count (SCC) to detect subclinical mastitis early.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 2rem; font-size: 1.125rem; color: #374151;">For severe or persistent herd health issues, consult with a certified large animal veterinarian.</p>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-microscope"></i> Upload Image for Disease Analysis</h2>
+                </div>
+                <div class="upload-area">
+                    <input type="file" class="file-input" accept="image/jpeg,image/png,image/webp">
+                    <label style="cursor: pointer; display: block;">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <p>Drag & Drop Affected Cow/Symptom Image Here, or <span class="highlight">Click to Browse</span></p>
+                        <p class="upload-hint">Supported formats: JPG, PNG, WebP. Max file size: 5MB. For best results, upload clear images of the animal's physical symptoms or lesions.</p>
+                    </label>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqqT1b5oe1iCARCT2s-RNTREmvd3qekhEs7A&s" alt="Disease Image Preview" class="image-preview">
+                    <button class="btn btn-large">
+                        <span>Analyze Disease</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-chart-line"></i> Disease Analysis Result</h2>
+                </div>
+                <div class="result-box">
+                    <h3 class="result-title">Foot-and-Mouth Disease Detected</h3>
+                    <p class="confidence-score">Confidence: <span class="confidence-value">88%</span></p>
+                    <p class="result-description">Foot-and-Mouth Disease (FMD) is a severe, highly contagious viral disease causing fever and blister-like sores on the tongue, mouth, teats, and hooves. It is a major economic threat and requires immediate government veterinary services notification.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjhvAuC8f9UvSlq_DTwSk-bBKATDf6C-ejxA&s" alt="Example of Foot-and-Mouth Disease" class="image-preview">
+                </div>
+            </section>
+            
+            <section class="section"> 
+                <div class="section-header"> 
+                    <h2><i class="fa-solid fa-vials"></i> Milk Quality & Environment Assessment</h2> 
+                </div> 
+                <div class="form-container"> 
+                    <div class="form-group"> 
+                        <label for="scc" class="form-label">Somatic Cell Count (SCC) (cells/mL):</label> 
+                        <input type="number" step="1000" min="0" max="1000000" placeholder="e.g., 200,000" class="form-input"> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="bacteria-count" class="form-label">Bacteria Count (CFU/mL):</label> 
+                        <input type="number" step="100" min="0" max="100000" placeholder="e.g., 5,000" class="form-input"> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="fat-percent" class="form-label">Fat %:</label> 
+                        <input type="number" step="0.1" min="0" max="10" placeholder="e.g., 3.8" class="form-input"> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="protein-percent" class="form-label">Protein %:</label> 
+                        <input type="number" step="0.1" min="0" max="10" placeholder="e.g., 3.2" class="form-input"> 
+                    </div> 
+                    <div style="text-align: center;"> 
+                        <button class="btn btn-large"> 
+                            <span>Assess Milk & Environment</span> 
+                            <div class="spinner hidden"></div> 
+                        </button> 
+                    </div> 
+                </div> 
+                <div class="result-box" style="margin-top: 2rem;"> 
+                    <h3 style="font-size: 1.5rem; font-weight: 800; color: #bf360c; margin-bottom: 0.5rem;">Assessment Result:</h3> 
+                    <p class="result-description">The milk quality is Excellent, with a low Somatic Cell Count and bacteria count. The fat and protein percentages are within a desirable range. These results indicate a healthy herd and clean milking practices. Regular testing is recommended to maintain this quality.</p> 
+                    <p style="font-size: 0.875rem; color: #6b7280;">High-quality milk is a direct result of proper herd health and sanitation.</p> 
+                    <img src="data:image/jpeg;base64,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" alt="Example of Milk Quality Testing" class="image-preview"> 
+                </div> 
+            </section> 
+
+            <section class="section"> 
+                <div class="section-header"> 
+                    <h2><i class="fa-solid fa-book-open-reader"></i> Explore Dairy Database / Common Issues</h2> 
+                </div> 
+                <div class="search-container"> 
+                    <input type="text" placeholder="Search for cattle diseases, nutrition, or management issues..." class="search-input"> 
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i> 
+                </div> 
+                <div class="grid grid-3"> 
+                    <div class="card card-orange"> 
+                        <i class="fa-solid fa-triangle-exclamation"></i> 
+                        <h3>Ketosis</h3> 
+                        <p>A metabolic disorder causing cows to have low blood sugar, often in early lactation.</p> 
+                        <img src="https://europe.pahc.com/hubfs/Phibro-Cow-in-grass-hero-desktop.jpg" alt="Ketosis"> 
+                        <button class="btn">Learn More</button> 
+                    </div> 
+                    <div class="card card-yellow"> 
+                        <i class="fa-solid fa-square-poll-vertical"></i> 
+                        <h3>Milk Fever</h3> 
+                        <p>A calcium deficiency in cows, usually occurring shortly after calving.</p> 
+                        <img src="data:image/jpeg;base64,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" alt="Milk Fever"> 
+                        <button class="btn">Learn More</button> 
+                    </div> 
+                    <div class="card card-purple"> 
+                        <i class="fa-solid fa-pump-medical"></i> 
+                        <h3>Bloat</h3> 
+                        <p>Excessive gas buildup in the rumen, often from consuming lush legume pastures.</p> 
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIQEhUQEBIVFRAWFhUVFRUWFxUVFhUVFhYWFhgYFhUYHSggGB0lGxUVITEhJikrLy4uGCAzODMtNygtLisBCgoKDg0OGhAQGy0mHyUvLS0uLS0tLS8tLS0tLS0tLS0tLS0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAK0BJAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAABAwAEAgUGBwj/xAA+EAABAgUCAwYEAwcEAQUAAAABAhEAAxIhMQRBBVFhBhMicYGRMqHB8EKx0QcUI1JicvEVM5LhohZDU4Ky/8QAGgEAAwEBAQEAAAAAAAAAAAAAAAECAwQFBv/EACwRAAICAgEDAgUDBQAAAAAAAAABAhEDEiExQVEEFAUTFUKhImHRMlKBkfH/2gAMAwEAAhEDEQA/ANo0FozaI0fRHgmDRCIY0SmAQqI0MpgUwxC2gNDKYDQWAsiBDWjGmHYhRgGGlMAph2JioxMNKYFMMkVAhhTAphkioBENKYBTDsQkxIYUwCmAXIowIbTAphiFGA0NpgUwE0KIgEQ2mIUw7E0IIgGHUQKIdkNMRAaHUQKIdkasSYxaHlEAoh2S4srmMYsUQCiHsZuDENAaLHdwDLg2DVldokWO7gQ9has6holMMaC0cFnu0LaI0MpiNBYUKaI0MpiUwWKhTQGhtMAiHYUKKYxph1MBoYqEtAaHUwKYLJoSUwCmGlMBodioSUxiUw8iA0OyaEFMBofTAph2KhDQKYcUwKYLFQmmBTD6YFMOwoSUwKYdTEKYdi1K5TApixTAogsWoimBTFiiBRDsWhXpiUw+iJRBYtCvTAKIsUQCiCxaleiBRFmiBRBZOhXoiFEWaIFEGw/llaiJFmiJBsGhvqYlMNpiUxx2enQumJTDGiUw7ChVMCmGtEpgsVCaYFMOpgFMOxUJKYFMOKYFMOxUJpgUw6mBTBYqE0wKYdTAph2KhNMCmHUwKYdioTTAph1MCmCxUJpgND6YFEOxaiaYlMOpiUwWGoimJTFiiJTBYalaiJRFimBRBYaleiJRD6IlEFi1K9EAoixRAoh2LUr0RKIsURKILDUr0QKIsUxKILFqIogURYpiUQbBqV6IkWKIEGwam5piUw6mJTHLZ3UKpgUw+mJTBYUIpgUw+mBTBYUIpgFMWKYxKIdioRTAaH0wKYdioQUwKYfTAph2KhNMCmHUxKILChFMCmH0RKILFqV6YlMPogUQ7FqIKIlEPogUQWGomiDRDgiDRBYaiKYFEWKIFEFhqV6IlEWKIxogsNRBRAph9MCmHYtRFMSmH0RKYLFqIpiUw+mBTBYaiaYFMPpiUwWFCKIlMPpiUwWFCKYEWKYEFio3FMSmG0xKY5bO2hVMSmHUwKYLChJTAph9MCmHYqEFMSmH0wKYLFQimBTD6YBTDsKEUwKYfTEpg2FQimOF7cduzpFL0ciXLUtSA856jKKiQyUjCgAbu4qHKOt7VTlSdHOnIISU0JCi+ZkxMsAMCX8RjwHjOqrnTFEP4ixBLACzeIOR5sY5PU5fsR04Mf3M9R7P/tB065ctGqXTOpZS2NFQ5vcE9HGY6zT8SkTA6J0shn+IY53j5wUT6Rf4bxBaCE1qA2IOP+omPqZpclS9PFvg+gzrJP8A8svb8ad8bw+SAuyCFf2l/wAo8a0JmzSTM8STlx9jlGWs08twlKU1OBYfP2hv1r8AvSLye5S+CzTkBPmfoHiazg6pSFTFKTShJUpqyWAcsAlzGf7OOJr1WkSqYXXLV3RP81KUkE8yyg8bPtXPUjSz+6LTu5mqSRkEJyPeM/d5OvBftcfQ831XbHSoDp7yZuyJavnW0UZvbZJH8NAH9wWojzAAb3jkeHcJmA5IIzs8dFK0t3VdW8Zy9Xll3o0j6XFHqrMldr54BIQlR2FCkgefiJhA7S6tZuaB/SlP1EXShJtzEKmalKEjm0SsuTu2U8UPCDI41PlqeYtTGwJKSPZSSB7xtE8eUA6zb+xP5ojlNZxxvAGZ/RswJnG0oSShgSLeY2h7z8sWkfCOk1/FNQmWqf4kSgCAopSPEUkppcOXzyjY9hu02j14EidNMnWA00qYImnYyy2T/Kbvh45Th3aQcT0szhc+07xTdHMdgJiUkmUroRU3mdwH8yExSVPcKB3sQdwRFRy5F9zJlig+yPqLjuhk6KT381S1JCkpYFCT4i2VWsHPpHJo7UaVU4SQpSarJUumkn+UqBYE7c8cnpfs17dfvstfDOILczEKRJmqupQpNSFE5UAxSTli9wH807UTZshc3STUspJUCbsobKSd0kMRFx9RkUuWRL0+NrhHuVECiMtFKaWgO7ISHOSyRcw6mPT2POor0RKIsUQKINhUV6IlEWKIlELYdFeiDD6IkGwUbSmJTD6YlEc2x00IpiUw+mJTBsGoimBTD6YlEPYNRFECmH0RKINhUV6YFMPKYlEPYKK9MZy5JUQkC5hlMcx234hr9OhK9EDQyxNplmZMJIZASA7ByTjbOxjJk1jaKhDaVM1HbDjtUxcpRCNHp1AhRZpkwP4gHdRqAb0Z7mPFeIzxMmLWHYkm+8babpNXr3MiRNmIlWUEJKmUo3J5qJzvFjSditUClWplKlS3woGs9AGYepfpHnylqtpHalf6UaNOlPcKmkW7xCUnn4VlXn+GKgj0/jfBzP06paUGpIqQEhkgpuwswG3rHmRS1jmIw5vmJsrJDV0dPw/tIrukyglNQZJff+r8o2vBdIqZ45lip1eQwPdjHBpUQQRkYj1LgOs77TCZLR4mKVX+FQSyh0DkecXJeBRZa4Zxafp0JKZ65cuqsJSogKUA2BkMLjBjDjnb5Wu18syhMly0S1yyl8lXxPTkFIwesc3q53fahQB/gyklKWPh8IZ3+caGXO7iclf9Yc9HY/KEkOz0VU4F26/IRhNnsAenT2jW6TU2cl1Ek+hJ/SKmt1TFI5Fi+LHbnCSKbNuNYc+fWNFxDUP62zt5Qqdq2cDa4+/aNbP1WIpIlsUqaaor6uawZ4X3rkvCtQp4ogQJqkkKSSFAghQLEEYIMejf6BJ1+nTqFIEvUzJYVWlwK2+IpBYgn1YxxPAOGjUz0yy4RlZ/pGQ+z4frHrKVolhKUgJSkAACwAFgAIxy5NKLhGzgey/BtRp9dKEySWQrvCco8KTSQsWPiptmGftF0S5msQrKp6UoDn8YVQ3QeJHzjvu/BDjAvbpHDdneJL4lxPSCYkBKJilpAF6U/wARNV7sUJh4pvJIU1qj2tEmkBIwAB7QaIfREpj2NjzNRFECiLFECiDYKEURKIsURKIWwaleiJD6IMGwal6oWD/EHHUD/MZ0x5jPnz5UyWUlRQh6SCosMrFO48It1i8jjWsKFPMuVOlkp/msHbBt6GPGXxLH4Z3v07TPQQmJTHFaTi+oI+NbmxDJbGRZ98wlHFtaZtKiruh4nFIc4APh5wfU8fh/j+Q9tI7umMaY4hXE9TdQUukk2cWLYP6wZPENTYJWWBNhuGtdrb55RP1TH4Ye2kdvRAKI4TU8R1lBqUSl3tY2Y+lxzhGr1+umhBRMUCQ6hdLA32zmD6rj8MftpeT0ApiUR55o9XxC4VMW9mJZmvdudxGcrjOsslUwiab0tlgLhww8rw/quNdn+Be2Z39EQIjipnGNYlLlTG1yA3raEyeM6qa5lTKmLFrsXuIf1TH4Y/ay8o7lEkDAAe5YAOTkxlRHFfverJBmKVS+xx1ttBWmckqmLWsuXFJILP0N4l/FYLpFh7WXk7JcsEEG4NiDgjePI/2i/s1lypU3XaMqAS8yZJN0hGVqlnIa6iC9nZmAjtJc+Yqk95N8XxOUlutPk8UdXqdQtKkIqVLcoKVciAFOw8SWMJ/E8UvtZS9NKPRngGI2vBNNqJyhK04UQshKmcID2dasAefKLus7GapE3u6AEkkoJUAKXLdcCO77PcKnaLQTkygibqC85INTGmmoAA3PdpUwGSBGznxcRqPk4ri/CJnDtUdNOIUoIStw7KCht5EKHVn3jS6maFlybR2nF0HXJl64IWpYT3M2Wl1KCkFgEBnOQOeI0fHuxus0qJk2dJKZctdKlFSL+KmpKQXKX3beCMrG1SH8P1qaEpe5SkPsGf2wY6LsPodNrtYqVqCCnu1sh1eNY3SRuLmONlykyxJQv8cpM0KuHcr8PVg3sY23YWv/AFHTCUqlXeZZShSEqKgQkgsQCDezw30Einx/SK0upnackq7tRS7M4YEFuoIjVzHTePav2i9jxrimfIWlGoSmlQXZK07OpIJBHNj6R5vqOw+pCilc7TuBtMWu/Lwot6xKyw7spwl4OQWqF1R0/wD6KnD4psoDmmtXyKRF/R9nNNKat5swXcuE/wDAfV4Hngu4ljky32c0KJMlCwimbMQkrd3LO1jjMbXUTCpgOTwlS6yDtF5Mv4fb5P8ASOWb2ZqlSFcEKrgi2/KMewnZf914glQUFIIXRbxJFBsfdrcoud2UkUkBO4hPA+IGZPrSSAxCS7WAN36uT5Rccvy+X2JlDZOj1OiBRHLGfPUT/FYYcKzzxja8MRqp7h5hBw9mi/q+PvF/j+Tm9pI6RolMcymfOSA0whIJa2z9YGmnzgau8U7keIAgixgXxfF4f4/kPaTOnpiUxxyjqQuZME01Fm5MMBj1/OLmn1moLGYpNQDAhg5uD4TiwivquKujD2kzpaIkclr9NMnqC1qU4DeBdIZycAi94kS/i2P+1h7SYmYm5a9mIfmf1zGXckPyd8AY3AwcZihMWMJTb+4j/wAnsYyM9mpUbhwlqwRySDnGY+eXJ3p2XvFkgpFjdn9GsP8AqHFJwlXnZ2+7xrEzFgEhiw2Lb/iAx5Qz94Wf5R0NXnazYgcA6GzSkhyVFiGHo+3PPtGACgwuMsbA+Wb7n0imucD/ALiyGvyDgbe/5QP9QJsXcHLF+jKwYO3Fjsv1hhc2d7G/1zERfd2/TpiKf7yzsQB+KrfFwBv0tD5cwkBRIfYH6+20Jp92MzKiRZsY3w313jGXMJFk3G5xysWMRc0uGIB5b42BGYHegliDzu42fB9bCExGaZqnuxBGMva/20ZSCE2SKQLMMDliwipOnPdiCH3DKBtjDflfygJn1KZMoEGxdJSQHu4Vnc7vAuerCy+jUHIPvf2aGjUPbctgP5xqk90klAQkAFvhZv8AFoamYhv9sXOSLcsM4eCv3YyyrUSx4lFO4JJTZtz84Z34LEFwwwfyioqcwfuw7scdCbZ3hcsMqtNiQGSwGerON4NV0ti5stz9OJoZYdsE5G1rRrwFSvCbMzHm24+UPVq7VAqDlmHPq+z/AEijNCiokuUb+EkFxsXtvYc/fpwZ3j4vgTQRr6FBaT40mp33F3MdHxJUvVSUzGCgtgoEuGVchjZrmObn6dCpZCUNf19Y2PAkqRIqAKpaVFChyIZSSf8AnHo+mlt+pdGROqOF4v2STNKSlC+7lilIQrABdmLkZjZ9llytCSESwlRsZhusi3hKjdrYEdJJmhFRAq8RbDsWvCFmVqQQpit7EC5Fst93jjyeoyRm4t8WXFKrMNbx5RBY/Pbzjn5uvDvkneNhO4HUD3awz4U/zUB9IozOz+o2CPIK9NxaJedS7looT9a8NkMUgfZPWDL4HNKmWAjqSD8g5/KNgns1NyiajFqgsfru8JZUurBlZGeg2izNnAUDmofpFLiegn6dJWsoKQ1VJU4cgYKRzjWTpk55JIZExYpVzpUAfKOvFlTXBLjZ0OskrVImpT/uKQtKPMggRzvANT/EqIISPCAbWDi8dHrdSmUxqAISpTdLXb0Ec9w11OshnUT6lz9Y6nFVTMFJnZlMx/wgbM5dz+jfZh2l1UwWWA2LKDMWZr5eHrkqSHDBsN9Wxk/KMRLKj4gCbW9w/QluseG8yaqjdoerVslzfmM9bNneIpe9SQ2Ntt/eKwlhRKrg7EXfyH/UCZKBIs7O+xOLE++eUQ3GhUPJ/lIIJzn5tiMe9axcNi/uQPWEKqBdBLPhQSpPyIPOMk6g7i2C4cPlg4+cTSBxGqnvd1bYB5eUSMAK/EG/5JHuIEAuTXplkF2FgLClgwsx8oBUhN2IJJFLvdqi3XpFiUnu2Cbgh7Mz4AIFj5RhJXNSCpbu5YJNiNiXsOsbpWVqFJUUMhISN6xTZLbb+vTpE7xSnWjJbwhlYGQM3Dbw2YFkgBKiwfcjB22gKkkX3DOBcjPI9BeBqwFBa7CllHcBwzgMQPvMW5821JuRtjN3c4GPaFTEeIzFB2N6VMU9GJAG3zjOTIwXYclKTcHnST/ViJ1ruAUSgTQsWpDEl+f4sRiiUA6WJS1ywHufQWiyQmkpampsqcD3JF3FhGEnTpUfDc3IYik9MYzCaFQsTCPCClsXd3znA39ozUpSQ4pc5wQG5kemOYiJQQzgqyDYC+wsOp9vKG90oqoNlhnFiGFh6bRDXkVMXIt4VOra5JZwp2OQxAza7wbGybKb4Q7j1NvTb3jNEpWSmz3cDbq994ZOSnb4iHFiQDbLG28KkUo+TCROSSSpJAdnVTcjJtgX/wCoIShyEgudiXt5P9sIxJG4Ns7gN/VtvvDJSR8TDmOo6Wzn5CHZSFzUVClhUQ4qFg+LjGIwSkkXAqfpgHL3jLVUKuAQdlBRYWIcXtvYj0jOXpifGDdt2PpbLQOmJgUFJNwLG5DU55eX5Q2al2dIINi2cW6nEV1yCbJHIqTUbYzzxz39YtJmBAKslOTnzLQuL5Gihq1MzAAsUkD5E/lG07Ka3uJMx01VqKgObBvZg8arV6gEAXDuT9QH9I2nZ1brlAAYSC21QI/J/nHdjnKGOD8v8EcWzXcPdVRAFCibHbGOrddobLkpdkygkgf22N8/OAOH0qXLUoikuGcGlSQbEevtDilPwgqLbE5v1v8AYjD1FrJKyo9EZJlFmGeTFVvu0Bcml7+LNjv5eUE3w4OWw9tvaJMSDdSVVBuThzvu1vlGK/YpFdWmrPwglnSXDWLDJ8j6RFSSlPie38r55hsRZYAWIpGS1w7QtOsl3SSSsO6XYEM4Yvf5xHIuhS1ujTOBlrZSVC4diN3cXe0SZwmUEo8FpQWUGp6SsGrJvnqzRfm6uWzkJGQ6iwcC99zY2jX8Q4ggJ8KwoFmAL5+jflG+HeU4xXkmTpWaTUcJXq10SwAkU94vkl3bzJTYQrjOgTppikIDJpSoB3yGPzBjZcG4rLlkpWulS1EtvSlh6ZJeNf2p16VzHCgrwBJIIIsVbiz3j18blL1Lj2owk0sd9zqWIDJZ7F+lthY2/KMySSH2PJxzd9vKNBI4/LsCzlnUDjHPq3yjYS+LIDFKkvkisAF8kDe8eNPHKPVG6kjYJUCzp2JqIt6NmJNWwBI2yPm/pCFcRlv8QByA45tbZ2EE6iu7ApZ7KB6hmLesTT7Dskwgl9iSUsLDBsWfdnHWMZJIwcnCgQT+cYo8dlikAgMSkOb58+h/KMzKWg1lQYpIpbrl3vCUX1JfkUZYclJSHL/CT9R0iRmiSTd05/kNokLkCrJkhwalqIDkNTU55bHkfflDpssJBUlIIY2y52YHzzyjIz0sxIC7qKckh84cZ5bwrTOclSUAmxxgZ+XlGmzS6A/BYlpKbqBLuVN4g5DEDcc4xnykoZThmD2dse5sMNCxOKVVUgoF3PTFO14QZ4mBwFtjFg/9Jv8ATnDUmuwFtKwBYsS9tyXfb1+UU9NPBN5Zpc/CbgOXNOG8v+ot6ZJzQonqyfidrbt9DDL1sEAWuzBzm7bQbWqodcGt0+uB8VyEmxOc49evPyjaSJyQxT8X4QwFw1zz8/KM6Aq1KRzG5IYfWMdRKCWLXY29OthvEtvsCi0ZTKy1AQWuyueeXl7wErLlYVSQ4NnD7MeULlEvUJZIsx2JJ2cj9A8ZLNar7MbM3ko5OBeG231AbKnsPGxzSMg83taKzpK6WLZ2IzsMtbnvDtIrvDUbAszgpt6HaFzgAzgu5AIA52257/pGUnxyDsckqSMG25DPn6fe0I1qQR4gQrYpwzbgkZsMxalrBLkkAC+LkjPSELkoBCiSQ1tmcM4e1hf033tf08A3xwY6bTMmlS6icEjP9w+8dIiVJS8skFnJDKBvy5s33vmgIV+EbMosevnzhxkpY1JBAYXHM5AOMP6QJ7IEySVgAEIJDW2N7YVf/EGUApqMqPhFr7b7RJKxSS3iYpNW2zPGK9PV8QuAQQlTM+452feBx6UVRyvG+MnvlSlJCJgV3YCvCPipqKsEbu8dN2Jn97PRKQCTLQKyxAQQkjxPh1AhufkYyElKWDAsRcsfFbmdsxbkz6ErSEhKlMCpNQItmzOQ/wCUda9TGeu0aS8f8M1B+TU8d47LRqVLPhQkUKVekzEqNnD3YnypvmOf13aVSiUyrmxA7svYAtUCHGY6Vch2K1KUXZyXIzsQ5yYwToUD4AGTdgBTfI/P3ETkyY5S3adhT6JnJp7YT0/FIcAAlV98g++3LpFHXdrJ61+EAJHiL+JsYwwx5R3/AO4SiylAM5dwDsQ1rMxAbp1gJ0ElBLJTkDF36Hkw+REVHNhS/oM2peTidNx3WzvEClIqYkJcGz3yd/l70uI/vRpUpcwqJbLXIBFIA8Nsl/aPQ5qUIQoJACQSkMBvZOB1inLE0CpkrQRuzq98XJ9BDj6mClxBIvS1yzzSfInKRUVLMvqTS5xmxfk7iMtHPEkcnY7iosGb026x6jL0smbdckUm7F72wWDnY+kVNf2d0081rQ5FgxI5BrW6R0R+IRXWJHyf3PMZk8qmFZAFWUl3AZgeXXnGcpM6YSEpYBLi4ApFsm3+I9OHZ/TH/wBsMAA5c+EYPXLbwvTdn5Imd5LBBRUQLHzLj+ks2IqPxFPsSsLOA4Zo1TagoplKUwTU7Ekl04JdTFgl8Fw14s8Q4CpLS03qUaSCCE2BBUfwhQBDEWKR1j0FOgkUjAAwLgJJDG4Zhs29/TR8Q0ZoIlqCl2IZKvDTcJKibghJyBf5wvW26iN4+DlZ3ZqYmppiDLCaypXgIFvCpN2UXDMSC4L5an+7zUhwVpAtkjkzdMfKOz0s6pCkEitH8NaFgKUyb1AO4S4fLh0hw0dBoQ6AoJRYB0pCSFE3FgLgn/8AOYp+rlFfqRMcRx/ZfiWpMwSVCqWSoKUoKUQOb7gKT8y0dhp1qpHiOBYgZf23DF3v6w1KxUAyUta1nfoQxML1Molwj4mcYDbt78jHBlyxyStKjeMa7jVyqjUQSTna/pAjOTUkMpKn6/dokZf4ZrwVBPCSGQSvcgj8V2KnY2FnO0RBcvhRdjYEcsEjLQnRazKAkMhII5thnzDFLdTMLCoZtszP1eL4rgz2tDkAm5sQpnAUAwHjccoyMsPZYcu5D3BI35fbCNYdRQAQm5UbuXtaGnUkATLGt0gfy2Fw2T4j8oFz0GpWX501IFNwWAOR1Plu/wA4QWSAEqdWwJAds35btB7xL4L2Fz5kPa7M3+ISrR+IMosxU3Ow6/bn0qUHQ2XkzyAH3bGHIdnEU/35lUJBCndl2JDudiSBuWxzeCuYqVep2qHJgkHGWdsxYlaiuzMCkq8iwv8An7wk49xSYVKpVdSWOEkDG+drH/MYz5aB/FANWQQnoLN6dIwXSoB0uS6ASxIFjy8s8oKJQUooLugli56bf/YxNeBXfQZM1ifxoclLDkxybWELXLSsUnL4KsXtnexPr1jA6ogmUWIASx5Pe3qXjDTeInyfL2Z2vtBt2DbmmPko+G/LN0ubM7lz+sSfw4gBYWhuZsN3U/PN/LeHy5ASyiAVKIuA23TOBGGukJZr5D3LGyjcb/B8zArGKl6UAFdds2uwu13Jdh0F8RkJlNvcPjJufImMtGsGyRS5KXBLskqDZbaLEiWHIYFqiSQHLeLMDxt8ME7CUpUC6wHD7AjJDPC0pqDktceJsZfb8vpY6ohBpAsW6EWKoxkS6hy9/INyhSlVINrBptHhQV4fPJOBf76RghBAoUkhNhksWNr2JMYTpJTLLqUSlrve5V+n5QZetUWdilwwI57+cZ1x1E6HLmILUhQDk3BBJFr/AK9PWFambSCyRUQDuGSDk8rbtgRb08oKAUwysM3JREU0y0rBVSBj3enZjFavuSzGRMUzs6GBKbG5GLHDFn84wCVBQIqySdh47lyPe7fqxZpV3dynwjIBYeQ+2h6DXnCibbC+33v5M14QkhdK72FIZ+idznfwuenudMUkBKE+F9wzM9/tvzhMlQmFiLFALO7XFv8Ay+UW5Muwck4O3N9hb0hNtdRpBShQUPFYFISnoWyc7fOFykAnOQRZ8BgA5wcesZaqcQCu+HZ+YNvrGRLPjcYF8/pE3yVQuVJKfhLpAASl7sRyxy9GxGOk0xTetmcAgFnd7ufvrEkTyT1yL4Nw/XEXFIKnSTggAnIqAi4vZ8dRxRQXMSHqyt2sz2fz6/rC9PpEEEgCzHcObM97DHPEYzOGIIPeCvxWd39S9/pFrQ8HlFmBAGLlR23N8fe0aJJvhlVbNYNECX8VSWpNz4XOVBwfTY7PDjw4CaDLIQfxIBVSsXuGJANstm+YszwJJTZKnAGGO5zvj5wO4RNUPCEgXYYs3r/gRXR1f+ydBypAX4KgUBiWufLlnFoUJRlAkTHyWAAFntzwMBowEikmlRFRV6U4vmMtWQRUQCSF5AOPTd4xc03aQwqmVXUOQ8JmszCJFE8XDkGWCQWd2ew6RI6F8xriH5RGx//Z" alt="Bloat"> 
+                        <button class="btn">Learn More</button> 
+                    </div> 
+                    <div class="card card-red-orange"> 
+                        <i class="fa-solid fa-shoe-prints"></i> 
+                        <h3>Lameness</h3> 
+                        <p>A common issue in dairy cattle that affects mobility and productivity.</p> 
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXFx8aFxgYFxodGBcZGBgdGBoaGhoYHyghGBomGxgYITEhJSkrLi4uGR8zODMtNygtLisBCgoKDg0OGhAQGi0lHSUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLf/AABEIAMIBAwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAQIDBQYABwj/xABHEAABAgQDBQYEAwQJAwQDAQABAhEAAyExBBJBBVFhcYEGEyIykaGxwdHwFELhB1Ji8RUjM0NTcoKSsiRj0kRzosJUZKMW/8QAGAEBAQEBAQAAAAAAAAAAAAAAAQACAwT/xAAjEQEBAQACAwEBAAIDAQAAAAAAARECIRIxQQNRMmETgaEi/9oADAMBAAIRAxEAPwAHCSzkUEOyvOARYWd0knWxEPMoJJBt8IZhMWmWD3kzuwolI4nKSlJobqAHWEXiCQSTUmNspl5mYB0O+jBTNbK7139I5ACSC1Aaj+UVqcUvvZaAsJlkKzIKgCogUISfEW4WgkKObxKsfWJDtty8ww6rjIoHgHHpEEhEtOVWaygWHAwXtoSjKklE9K1jNnlgpzSgT4SpIql9HimCvCaDSCKr3FY5C1rXKUCgqJCq19awMvbK5YeUgZlju3KQRlWWPI8YGVNQvMZZdClEpIBDvehFKvAm3JSk4XOCQoKSXBYgZhui+L6PTNSzsPQboecZLMtMnMO8zmYEC+UjLm5PSBJCFCl+EV5H/XS//YV7Lf5wcpuGLafLfl7mkV/ZqYBIkvokci1PlFzIVX5/f3WKHZUr/p0cMw9FkRoJNu4s97JyqISqaAoAsFjKSxAuHEbPBzpWRg1AH9N0ef7UcKw7ggieP+Ko1OGmhKTvblBhU2El5puIyWM8tyKUmJO0MzL3KAAGnSz7tBnZ0gTcWW/vuoBloJ94C7TI8ST/AN+XzqqJLTEFa1AWv8PeKceZY/7iv+Ri4kKSVEh3+HrFTMPjmPfOX/3GKqMX2p/t/wDQPiYqGi87RpKp9AScooA+pitOEX+4r/aYzWgwEK0Efhlfuq9DCGUd0BDqEOAh0wAaw4NvEQNSiFyxIAN8KEwFGEw8CH5IUJgREph4TD0j73wQlj+X0g0hwiJgmkP7saP1iZKKRacRpliOgxEqn846LQs+1KhlT/DOQf8A5Vi0Xh3Diz2gfbMoJQFrKal6mgYi7xbYFLu3ltzL/rHaOTN7TRlxGGL/AL49UvB3fPd4O2zh0oWhRpmLDiSCW+MApSSqw4CrffWJK2WD+Km3qhHtSLQYY+kMBCZ/dnzZApq+V2v+sHynzncPtokE7OpV3CQfyzZl3ds5I6Qf2jdWFmAAk0AbgoGGbJmBaVZLJmqB6RPtJeSUsqByhJoBuq9YNOEwkpy5fy+haKnGoKsXLUAQkIWH3VcRdYTxJSRql/UQBOmBM6UkjzhTWYZUvWL6huJWyU0v8orNjyyEZFULqPqskexEW4Rmo55btYC2dMfP4aZ1J/2rUh36PCFdtPBLUqUWtPSSXq2VQf3jTYXZxbxAEUZ95gPbyskuQwcqnJf+EF3V0iywe0JSE/1k0PuDnV9BAVZsuWqSvE5mrNB307tKT7pgbbGCKwki4mIJJtRQPwh8zaSDNnG6FKBQwLkBLFwbHMT0gfFbQBDJBFQailDXW7PyfWGJZ4aQygHvp71irnYdpiybFSg+nmhp2pM/KAmruamIvxM0+YJId91SXdx8IrFAWywU44GoeSpjyP6QBju0mIRMWkKSwUoDwiwJAjTq2m6gpcpLgEBQAzCtgWcDRooJvZ+biZqjK7rMScstyla9aOMil8MwJ0BjF42+3TZnVADtRif3k/7YnT2uxX7yf9v6wIvYs1ByqQxBYg3B4i4gyT2bmKAOdDcHJ9GjNmezLb6Qzu1WINyg9D9YT/8A0M7cj0P1i0xnYsjLlxCCFJCqpKSOBDmtN8QK7MteegdPqqDY1ePKewB27MN0oPQ/WHjbh1lSj/pgo9nECpxUv0T81xENjyNcUn0T/wCcQyoU7XGsiUf9I+kKdpyz/wCmlf7R9ImVsvDj/wBUDyy/+UJ+Bw3+MT6frAcIjHy//wAaX99IcMXL/wABDffCFEjD/wCIv7/0xKiTI/fX8v8AjGe2sgzZyUzHPdIDKAD+K9yQ2kQgJVaQOhPyEH7OmICfDnbNvYvSh4VHrDxiJZSH7w+E3L0Dly5vQ+0IoEYb/wDXP/yhYJm90TVJsNdMobXc0dDjOh+0aFKkzEAVylhv1i+2Uf6tIOrHjaI9rYcFClirJUW6Ewmwz3kpEwOxQktzEdtccL2wDypCm8s+WTbXMNYXAyHNWpTp9vC9tZbYMq/dXKP/APUD5wehDOwofEOsSU07ALVihPAHdiWZaq1BzOKbmgiYkoJANL0NKiIsRtFaMRKkUyTEzCd7oS416xLj8QE/z+MSRbAk5O+8SS8wqYVKcwSQFbi1W4xbdoik4daHTmKCwcOS26MkMQA+U+ZWY8SzW5CNt2H7LyMU6lz1EpYqlhLKFaeIu6SBpXlqePenT+w+xziUABYTkQkLcOQSNBrY6xoZ37OJaly1mep0P+QVzJynWNng8IiUkIloShI0SGEPnzkoSVqICUhyTYAXMO/xPPO0Oz8NgWfPNmKScqXCUtYlRYkDgLtGTwu3hKzCXIkpJUVOUqWQVFyf6xRDuTpE/aTaZxOImTXOUlkA6JFBy38yYplpzadY0Bm0trzZ4AmTMwFQMqQ3AMBThaK7LAy8TlBdyxgOZts/kRAlslD/AMoaqU1CR6xTrViJjEnInhBeBkEXLnjChpRxhZd7w5G71hQqEHkUhJdCDYioOoI1B0McFw4ZVXiL07Y+Gk7TwxM9CTPT4FTAGXvSp9aXFrxm8Z+zOf3mVCkFBrnNAOBTUvyjWfs1lJGFJALmYcxOrAM3Bvd41kY0vMNq/sslzJASZpE5I8MzKMjCoSUCrXq7/CPOtr9icRh1ATciQbKqUHkpva8fSM0Ujx/9oPbDOV4WWkFAUyyfzFJIIbc+sZxry/rz47CV/iS/X9Iers+oAK71DHWoD7uMV2Jw7KIaDdlYlEvOlUsKStLHM7Ucuw6VuNI5243MrhsT/vSvUwg2Q397L9YjGCz1kpUoapZ1p5t5k/xDq0RCQahi+5vaDTg2VswN/ay/WJxgQP71HrAkvCq/cV/tP0glGBXohXp9YNOLbZ6QEMFpPjcmjVCd94YAzf1iPKryje9mFods+QQhiK5wbjh9IT8OoAeFIZKtbX3njDKzhWJb+tVYb93OOh6Clg7W/eQPYphIvI+FWEvHSVJKc4JVRg53jdDsDMl4ZpTLyhIAAQtTDSoBjXI2VRsgD9PeJ0YSgcJ9R9tHXycsZabPl4hBld2soUz5kEJ8JChfiBDXmBkiRNNP4WLa+aNd+GDVKRyh3hIACg4uOsZ04w+MJloK5kspP5MxBNbs3CMXtDGLWWDgEsDWp1A36RuP2hTay0oU9N1nLdbQT2o2MEYaQiQApcotYA+JLqIJ3kZjGpYMZHZuAygFVVH2jX9hcQqVi5eSyzkUN4V9CAekYlO0FJLKv9ho1v7OMXKXjZZmKZnKBvmWSD6k8wI3MZ7e2xV9qJalYSeE1Pdn2qerPFlnED47F5Ja1gPlSVegJ+UZLwdaqwLicXloIbOnsH1MVq5ma9I0MPEx1F9YlTIAMF9n9jzMVMVLlAFQQVVLAZSNd5dhziJCSCUqDEFiDcEUI5vChGHSKu7t4WZncXfTK9tWhcjB9YSWqIlzqtCBCKCOQQIhWvSEWrSJHzFRLhUqUoJSkqJLAAOSeAF4EzxpOxXaBOEmkqQFJUwJ/Mj+JPQlxrBTHqvZjAHD4WXLIZTZl/5lVI6W6RapVFVs7bsjEP3MwKIDkVBD7wYMkr1jBQ9odpjD4eZO1SPCDqo0SPUiPnXaAKllRuS55mses/tX2mkypcgK8WfMpINgAwzbi6nHKPKsUH6xr4EUqaG8iFqFsw0hv9IZbS5KT/7Yf3gVd7sYkkYtaNx4HXkdDGOXDfTfHlg/CYyapyCAzABKQ5KrC3AnpCYvHTsxBmE6OLFgB1HGFk7TzUBY8rH1Jjl4xTefmP5jnHHO3Xy6xAqatQus+sSIlqIrm9/nCHFTDcsGd2BpXhBmCwyj45y8iOIGZXBCdeZpBi0RszBkhmrmBJNgAxidQTlEtAOXVRuoitdwpaIzjMyClP8AVoStLVJUrV1EXPCwiDICkeYmth+saHqjJGHl5RmKXavSm+OhmFw4yh5aurjXc0dGfE+d/jcLUctz9mIsr6n7+MFZk2KSeohrp3MOcddcsQpRDyndDgdw9Ykms9h6RbVjJ9rJLFC9xtvY15EU9YvtrE90pQHlGZjqAHI55Xgbbuz1TkBMtIUa6Ddf2HvyiwlzFFCQq5SAodGIgvpR5f2gyTUCfLZkrKFgDX8p6/WKjBYkpU4LEW4GLTBYciYrDlOZMw5CNQpJOVQ4g6a2iqxWDVLmKlqFQW92+UPGtco+i+z+3UYmRLmpPmFQbhQooeoi6lTHEeDfs+2ouVPEnMcsx6PZQBII5gN6bo9bw+1GofaC8svbOPHtoYciYpKgxSogjcQbQBi0AB/WNP8AtNzpxYmlu7moGQjegAKCuNR0bdGblArSsgOEJdZ3AqCR7kCOsuwYvexG3pOCVOmrdSjLCUJTq6wVVsCAAfWAtvbaTisQuciX3YU3h1JAYqLamM2uYziHYReum/SEVdpVSIe7KQ56xFLxYh8zEZqGEGS5328OTMZz84iWK6RGZhiQzvA0cibAK1tEKMQSawaXoP7M5n/VqNWEpRJ0FU3i/wBvftFShWXDITMAutT5TTQCrcYwOEnKk4KbNzMZ6hJSBcoR4ph5PlT1MVmFVvgSeZiVLUpai6lEk8zUwikvESqGH4eYHYmGCgZuGqaw0TAAxrC7YxQStLG4ium40RUrjZOHQcRJzeRUxKVgH8qlBJL6MC8Z3HYwmYrIolOY5TqUvQni0XPZ7GJVPlJZ/FmPJPiP/GKLFYMy1lF2p0uPaM0tRsvGJWgESk95+85aly1h+sWSsQskqWA+WpoeQrxagii2CrxhCQGKHc0Yu5NaWBpGiVJLMVoHC/wFeUcOfV6dOPcNkzSUsSfMNWDHgOUccRbM7km2Y/pvh0ohlDMCHDZUGjMS7kVJ15Qi1BLEly/8IHocxaGWKylkAZRSZ9mOhJWOCQAMw4Or5MPaOi8uP9WVvxh1bjCpkF63h+HmHNeGBRMb7Y6xKmTxEdiwkVJ/neGJTy+xA+LwpmIKeo5g0jPOXOvZ42fT8HPlqNyDwJAOjgit4NxuE7rzZlbjSpIdvj6RjZFJmVTpWDrQj6xupWJ73ClCiCoCm+lRzpSOP5fr5dcvbpz4Z3PTAbO2OqdjStCfBLnZlEsGZbtxNIm/aDscLedLFUh1Bq5d9tLem6COx02YMdipTnL4lFOgUFBjelFdYvjJK1kHVDc6n2jXllxZ08t7LzgMXIUT/eAW3+Ee5j1GfLVmdNX3afpGHT2ZKMdlIaS+cE2YHyONXpyrHoUuR4sySCDwHyMPO76ZjMdqNlfiUJQVlCkF0khxWhB9vSCdn9nZcrAz5KC65qGUtWqk1TQeUAxppuEQoeJgbwKJZRYPu3n0vGZys6NkrxTD4CZPmIRKSVLXRIFz9A1X3CNx2h7JTsPsuXLCc81M8zJndgqLKSUBmDkABDx6Ds7Z8mWsrTJly5ig6iEgKqa1Ghaw3QP2s7SSsNh1TXObyoA1WQct7Cjk8I7ee+mMeCyZxS7wdLxZikfrBaFFo6azi0TPJuwhTFegmH99DoSrXBewdlrxM9ElH5vMrRKR5lHl7kgaxWqmiPXv2bbORh8MZ00ZVzS9RUIHlHWquog5cshk1jO2uX8UMPKTlk4aWEJFalQzqPEkkOeEVEtBJpGp7fYuTNxKVyS5MpOfgpywPHK0ZafiQimsPH0KdiVsHf0EUZxZKqFhFgtSlpOWrJKjySkqJ5AAnpFLh5ClqZILnhFasELmPcW+cCz0gmkXCezilJHjY7gCfmKw2d2cUhByzc85JdUpmPdmgUl/MXB9uufKHxo7sRs3xrmHROUHiq/sPeKjGpC5q5lfEokctPZo1uBHcbNUo0Wt6FwoFfhTTgmvrGRRMq0HHvaqIkTO7ykAlWgHwMayagKqRl4u9By14VjPbClgrJWgryAMAzAq1Lg0DRoVY0v4ZaepJIBFCxNaR5/3zlfbr+foEFgPcuTUCtGqzUtCowaiXAU3+U+2kEzMaoMU03uhKDTcTUiHd4oglT21P0JFHjhbx1vESsAo1auvjArrQ2rCQ8FB/Mn0B946LeP+y9F8Irq0O7wbogyNoa7hDgBy0aPb04dnrVq330h2cZQctX48fpCKlkipSBxPQRwR4Wcb+e+m6C4ZoDHYYTQHDEWIA0ibZeGW+UKd6N92iXMga1au6LjZssS0d4R4lUQOG9tH+HOOXPhw/wAmpy5TpaKwyRYAHeAHLb99opsZJCZgI4ig4v8AWLaS4SVLNT9tGc2ptpKZ6RcatpGOfKbP6eMvaXFYTNU0awuTStuUJh1gC3vBasYCl0+0VsvEuoggijj53g3vGvHrST5rmhIbd8OUS4bGuzhmNdQWtEU0MXHN7wThcOkvU04gj4RtlQ7bxL4knMWAAG7Un4+0VPbyQcRhhlqtCs1PzBiC/Fi/SI8ZPK1rBDgKUKFqgn1p8Ydg1DJ4lsd3LnaMcbZdbsmPMEJe0WmD2ZMXVggb1uPRLP7RqU4CWFZkyk5ruANdxa9TColEEE5jwdh6isdb+t+Rjwn1TYHs+LzZvh3IF+p+npBkvZ+HS47twdVEknSn6Qfh6KJIcmwejbgTWJFpDWAF2q5trrBvLle6ckZlpOFV3hQpZfw5mOU3dvgTF7hO1PegtmW18zhuWnSKHtKgqDtSleLnTr7xo+yWxwcF3gSXK1EvwIFODD1eG8dntmXKzuOxeWYpZBAVb0D2peKOdicynPSNlj8NLyqBBoQGpU7x7xndqbJZHeIqNUi448o1w/X5Vy4fY2P7HpHfYqbnSChMhQLtTvCE2N6Z4fjsMuSuZLUEpKDlLIAdh+UsaEEMSRekYHYW1JmGny58sspCn3uLKDaghxHsna2RKxuHRj8NN8A8Mwi+WjBQuFJJZv4hoI1+ktnTPG5WIlULBzVyDQjgd/xhy8GFZZrAKSCHswL1oKi+u6OwawmmfM2gST7lmFLACDZCRQplqLG6lMLnShAce0eWeXG7f/XW9zFZ2jmSu4Wcr+C+Z2W4SlTflrfgTGKw625x6LtLZvep7qYkSwdcwzXfeTcClrXjF7U7PzcOugMyWbLSD1BAqCPSPR+XOetc+fFadnpZKlGnl1UAL8SN8XX4Vf8AigOOKvgPnFB2UQsz6MUhPiBLBjQV0L16RtpqwmuYP5glIAoNWHE/rHL97xnNr8/SqTgEJYlUyjuQAB8+J6x2WVU5Cpquon2ZnvEpGZqubs5KsraUrXTfvhwlZKknmoW3vUPyjj5z43iAYyUKZUjhlH0jospMiUoA5hHQf8tONCnHEkPdqs1KatDJmJs9X+NegipVPtezvXxHeX0A0jhiTuuzB/Xla0eryc/FYzcapTggNq3DnCHFEilA3p6frAEvE0rQDXnY0uaiGfiWNDVvnSpBjPlT4tHsCSFqzzGypApUZiSwuLXpGjwo7yYVGyaCMZ2emgz0JUaGjPTe/wAo30tkCgppxhzct9M3pWdqMcJcsl6tQNHm6FliomprQ1bid/LhxjQ9s8c6tODN1qb9IyJn1NCBz8R40sNKxw4Ted53/p13OHjFph9rKl0SSQRZRpS7UpBGy9u95OlHIUkrAruJy19Yzc6YQXYgkb4J2ctRnSqM60sSanxfekdLxm6ztzHoYkDvD4aD0BewbfBdACwsKD68ImnSmJWlhmDF7U+BhVyUMG10+h1hsrGvMMVMyqUHZlqA4ly/WB++A0biWAfn84i2rM/rpj0ImK3v5jS9KQOrEaigAtcc+MWt4IRNUBQkgsw0Gg41YQ38VlDW3mtVe9IBxCksTwYcae3KEkpGVmoLAb/rCln3tGcV3W5g2a3pCiZQ3+VxAcmZQHwjmQ5iCbtAgEBLvb+KNSCpP6P/ABE5CSSAopSW3FRPTmd4j2LC4NAliWhISlIbKBap948p7PKCjnW6VJUFJ6Nd7h6cH9PWMBiPC5DOxfRiP094OPL/AOrGbOtec9pMGe/mJDaEDcCkKJ33pQH4mKzB7NWoAuAHpQmjO+mhHUxf7WxclUxagWUpTvrQMm3AD0iuGMSNWBDZaNlN7DWtHb0EcLzu3G5OmY7QbAShAnS1EgkZgQzZrEUYDS+ojRfsoxDHFyV1QuQVFJPhdKgHY0chXtwh8/GSynKU5gaEaMafAD0G6NP/AEBKw+GmqkywkqSFHxKKlBILAZiSB4jSO/D9LeN/rHLj2ojPUBVATTw5ktmbkDSl6s8CqVMIcJAV/CklyGJq1RVrC1Wh4lrJc5hyN9WVQkim+FTg3Hie7tmMebxuuhcHOUzTA5F1JNwFFmId1AAUsd8SYpYYit6c3vUgh914SXhkff0ghEsDypHw+AjX/GtDZ5gUMgSl7qcgnjQZXajmGKwYVMzFKc2ViTdtK2+BizTKawvCiUXFgNaV9Y1OA0ANmBtRuYn4n5NDlYAAEM41f6QcZcRk0cuDu15a1hnGRaC/BpFGNOJhYsBNHHrHQ5BpmKlKJdINHoeJe5t/KIpmCVkFg9ybHhaK9OLKSTmKi9XPDjxbnEZxLBysO7lLUSNG6wa1gzdUGtLtvrp1e/SIkzmL+ajUFOrNSvPdAqsRuJKzRgHyhvY/dYahayWYk1oSASSdBy38N8BXexZoE6S5IOcA9fCOVTHoUzFpCPFU5agC5a0eUbO7wzZZZP8AaJIqKDM4JMbTZmKdc1y5DkVNA7a0blHSf4ufL2yO2tqd5PXYNRI3AGrPTQ1immYxAU6VVa9abmzN872g5ezicxJUSS7ZWzaNma328dhtjJ83ddSpQb/KVO2tox1G1b+JbykgaljXcz31grZE4oWiYFJdKgQCSSrXcdfcxZycEhIbuC2lUH3KbmIsRg1rUSSw/dzAnh4melqQbfiehbB2sMShQVlKSNNNwPEtFkjEpzBLg0pyGv3vjzfZcxUhYUgcFAjzDjb7Mb3ZmKQsBaA70I1SbsT89aR1422OfKY837VbKCcVNSVqSCrMA1GVWin3k6borP6MSQWmPSoBu1Xtd9I9K7abIzpGISnxJDLcOydCORNefCMeMK4LEvzYe8ZuytSyxTSsAh3S9DrpxqxFeMWIwxqMxaxcJI6uX9jBn4cUBqOMPJajfSM5b9a1UT9m0zO7aZkuX/hoQOP2BJOA8VAH3VPuLxeTJZVetLadYhGFrduIvyEa2hDIwRGnr9Oceg7NSTgdyhLUPQEAxhVOHevxpvAjT7P2mkSBLFympfnThDxZ5MurBVcqoPv7aHpwyd1vtuBeJxQXprChYFukZxokuUnRIjYysUk4NIN1ApGujPX7tGMxM9knTQVD+8FbKxqgioNLBW6jnd03CNS4zezaa06/bQ4AamI51CS5rutHBSbgH2PHTlAUiClwBQ7tYkXNHHpb7/SAlJWoOC3Alhdq3+2iZGGTYGg3EV5kRak4mlxRuaq820HGOMzR6+vqdIHOGSKsSQKh4nkAN5W3OQfXhEknd1BBBYWv78vlEU1akhNKfmZJccqknqIWXNV+bwnX+TxKF3dmejXpAjch0J9PpSOjjLeveEcGR8w8dD0mfVg5ZU4d6BQqAw1ua0Zjw4wbLkpCnSlX+lQy0BuD0H0iVEkh3Jf7sBDcyWGb0LP7GMeNrWwzEYijlwEh7CnR6jrAxxJVVCSaFvC3IF7hosEzE1YcqX5NEWInL8yUsGbMQH4sN0XhF5GyJK3QohjmBIsKa8Om6LDZ2Kyz1ubkj394q0YpbOKjezA7oBnYoCYAFOq5OoPSl6RuTOmL2uzLu5b9OcSzTvJPoPh84rv6QSzH0Hr1+UEysUk2rR34G3ODY0fQ9L1tzhoNAXHCv6AP1hs+elIJZ7cb0eIEYoKah6j6RBOtReld9KjrBWzNoLkrCkin5tQR96wAJoIp70+2iqnOCz1NBWphlVe1YLEJmozJqlQN9RYv96xjO0Gxu4VnQT3RNAx8PB924/ZqOzm3F4dQdzLNFJ4/vDjGok7R79a0LKe7Ogy8mJZ3pQx05WWMSWMosjSt9GtS5p7xGJg9vt9IK2tswy1MC6X8JF+RbX7pAMxLkA303H9Y5Nkmzwk1p1hCugs3Ej+ZiRaCAAwyngA3PMzwv4bM4Az8kkvzIDe8SCTl0ql24+lmeO2djGmJQa1c5tQBbiYmmySggFIewFT14cohODzecJJ0YGhH8QsYUJ2hinOZLMbjTmIGE9RuabiPv3jp2BAcF1FqeZuDu/whcOhSXcFtS9W+YrFIg+JmpKSklx9kV3xLhNoq8oLhms43O+l4NwuFSQylFT8Lc+EGJ2ehPlSATrr+kVQPKb2PE39dYm7qhFnsXqN1K68wYJNLppxr7QsoVbJ8G5xYjJWFoHb5Ob2GsO7suwGm+j8RrCy8IQoKcUNGA9H0hVgB3ISD5Q7t1qRUxJwU1NdQHA3Wy15xKkpoC1dHiFC0IBDu4qdTWnOFRi3sgtpT5aiHEmEhN29niISTXy3Nnp731+3gedi1uzgMwY+blzhEYlZGp6fMlosSdRmPRIbiA/s8dERmq/wz1UAfTSOgIXE5iDlBJetQ3zc+0CtR2JA3P6RZGUCVVFbWNNAIkTh1Fg5D7tPS0UosU+VThvC9X+XXjSCzhXZTFQpUqDg33Vr9mLDugkEqPjdyFKAJ5veBpqVqokFlfmSM3vuitGA8YXLkU3BWvU/KK9UlD5nLNus3u/CkXM3Y5FEgvYqWwFt5rWG/0cAC6xQ1YuzMSHTaMlRzZksAKzC9Kip4bo5IYuCHavmfpv8AT9NBL2chgaqq9iX9/gIMw6EIqBoSTRIqeA379IsStkYdakhVQeRoTqXNuEIcMUPnUo11YX3DdFstrlnuC6lfGkKJQJSWDi/hFd77/WHJErzgBQN7A14QhwBvkbdQcnFqQWVmgSnVnJp6A3qaQqMIugOXNowr+giQNWCuyg7VGZLnR2Dn7EDSsHNkrMxISujEORyNQBT9IupOFKiWOY/mytlTudY14CHdwl75yPLUJlD/AMi2+FKYmbNFUq30ysniGPCDpeHoPEHufESPW3pE07DqUPEymsHaWkcAKq9ucRzJIfxzHO4UA5D5xYiksHSBQaVKutoEnzaVU/BSiov6geiYJkyDUgKUOR5GoDj4QxWEIUwyjcwBFeevrFIjJSgaeMs1kAhIB3JApyiZUsJQS6QncCCVCuhb6xH+BUC+cAvQuQTxDxyMECwMwVNAd+tTvhyJPg8q2CQQRYk0H3dolEkEtTnWuj1t6Q2RLaqVVuKvY6mnKCTQuku5Ni5SbKFaCsBCqwafD8Rp6H4QIiZlWWdTA5S+jVf3bm1Ys8mjHiVMOAozPxpEE7DipVMvuDnqAC+kMDkYgkBgkAipJFNKHfwiIrUWZSXL0TXUGn6n9ISMhAyku5e3rdurNBIxJAqE5SAAQ4SCLgq0hv8ApGJcH877rBm3OYcpIUohipz+Y+nhD+giGdiAQCpLvbKS24A1vTeIayyAVsKjQ0cO4CiXtGdIlMkAHyp1YVodznfrDiaX+RHB7M+kAJxJYiuYKYHKlvQjjfdCrlzE1BTk3kEvXgbH73QWIQZ4HhU5FSljmPWraR0yfpdtNTwYffOBTLQpwjMpW7KQHetTXjWCJssFKRQACw8xO8kPWJJESlEPnUngCwHBjHQitnL0LDms/CkLF0nNqM5pfKlIJG4AFQHWJHa6Qf8ANmU/+4wOmeKscxezk30h8rEMoin3qdBSGhGvDUrQEv4AwYHXrURJjJiy2VaiDUgu1dzD5Q4kEFQAJ01J+QHrHYdKiasBo+V+ILGjUoIUciUAAVZXFyTUcXLQhwgzZswOgN24ivvDMThMwS6gCLskW+LtpDkSJSUkEEg2c3p6RJEunhzjgfMr0YejxYpSm5FL2NDbR8pozQKol0hLUqct7MxCg0SBRaoYneQBTWmvWCk6XMdRPdM1ASQ7G9naJAHUC9dEpcP0F/SIpqBQqUQdB+Y8Bb1+MSzcP4alUpFXb+0U2j1LenKLA5DoauYiybnqPrDE4cAZZjMf7tH/ANzqYehWVOWWnu0kivmWr6c/eHhIZwlnqN6jpVokbmSGTm5JSGHAP+npDDKcuFK9m5GhiZSSBQCgpuG8v96Q1BBNn4VLcWEBcJdK+v8AOGfhhqx+XpS77rQTn+o+UIlfIE2e++ghSNKW8IHhFgLdBzfSGrCiwZupSw5gVPOJiskmpbl+kRfh01BY7gU0rzgRiyklTlJUd5dhrYu9d/SEMhAUCMz6FL06kv7w9ixCwHsMpID3r/OGroP7SWl9crkHcAXe/tCg654Q7JdzqSpRO+rC3H1gj8W6VIWAij2TZm5etmhshBejN+YqTUg1BFB9eUTd25rVrNZzQmsFqC4jGBNw+4kAinKnpEspRZ1hABsM9H14j3iLE4VNisJSPES4CmfwliKe9oMTII860kU8yQKkU0JF/cQgJPxCEqcqSaA5SxG4EKyvS7AaXgpMghIKTwIomnDOQ9d43xFipZV4kpCnZiaBLHUM9tzwHlBUQ6VOKpSklx8aAQpHIwxLqSQopVbQnoQN9RcmEwk4rW0wEt+UsGa7aXB9IIxmLGTu0JyEvUDKXdqfekU6EgUAdzdXHi94fFauhLRUoOUDiQ/LMaG2kD4lAK6ZiCCHIBQo8Uq8I/T1im7NmJQ/epZg4LgbgxqCYEl4pvCpRbeEpKhwOYFx8/YxafJx6wshQypIACcpIDUBBpm0obUaJ1Y3KyTLKU66ZhxJ3ww4s5R4QkJPmLqVUN8bNZoiViiCVZiQ3mVpoA5tB5SLB6ETSAcprUeOXbTzVs146ITjzuHVCSfVo6LSJwksd5YeTdziPEfm+9IWOi5BYyx/VngKRWjzr6fKOjoohmCPz9oTCSwqhAIzKuH1jo6L6jsPdPX5wRJHjV/lPzjo6D6U2AQC5IDgULWq1ICFcSkGoJUCDYgKoDwjo6GBHgfOo6lVTqbX3wQ/gUdd8LHRX2jcKkEy3Duav/mP0HpBOISAkMGcKfjHR0ZpBk16/SFxF1ch8Y6Oi+oRhkjKaa/KHS7K6R0dFE6R8/kIYDRJ1YfGOjogG2iogIYs6mpuY05Q5dxy/wDrHR0KG4hIaWWD79bxFOSGTTU+w/Ux0dEkey/LM/z/ACECYyapMolKiDnahIo5pTSOjoYFb+Yf5X6tfnDAGYi51/0qjo6N30jAfC2mY/BP1PrAeJUQzFrf8oSOi+KjZnl6/OIkHwA778Y6OjhWolw6AUhwPTjHR0dHVyr/2Q==" alt="Lameness"> 
+                        <button class="btn">Learn More</button> 
+                    </div> 
+                    <div class="card card-blue"> 
+                        <i class="fa-solid fa-virus"></i> 
+                        <h3>Bovine Viral Diarrhea</h3> 
+                        <p>A widespread and economically significant viral disease affecting cattle.</p> 
+                        <img src="data:image/jpeg;base64,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" alt="Bovine Viral Diarrhea"> 
+                        <button class="btn">Learn More</button> 
+                    </div> 
+                </div> 
+            </section> 
+
+            <section class="back-home"> 
+                <a href="#home" class="btn"> 
+                    <i class="fa-solid fa-home" style="margin-right: 0.5rem;"></i> Back to Home 
+                </a> 
+            </section> 
+        </div> 
+    </main>
+
+    <!-- <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DairyAssist</h3>
+                    <p>Your partner in modern dairy farming.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 DairyAssist. All rights reserved.
+            </div>
+        </div>
+    </footer> -->
+</body>
+</html>

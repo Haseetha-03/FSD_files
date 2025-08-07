@@ -1,0 +1,507 @@
+.parent{
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(21, 21, 21, 0.909);
+    background-color: rgba(250, 214, 171, 0.999);
+    border-radius: 50px;
+    position: relative;
+    top: 20px;
+    z-index: 1;
+}
+.child{
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgb(228, 214, 214);
+    background-color: black;
+    border-radius: 50px;
+    position: absolute;
+    left: 663px;
+}
+.ear-1{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgba(250, 214, 171, 0.999);
+    position: absolute;
+    top: 73px;
+    left: 655px;
+}
+.ear-2{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgba(250, 214, 171, 0.999);
+    position: absolute;
+    top: 73px;
+    left: 753px;
+}
+.child-1{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+}
+.child-2{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 25px;
+    left: 55px;
+}
+.child-3{
+    width: 8px;
+    height: 8px;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 8px;
+    position: absolute;
+    top: 36px;
+    left: 26px;
+}
+.child-4{
+    width: 8px;
+    height: 8px;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 8px;
+    position: absolute;
+    top: 36px;
+    left: 61px;
+}
+.child-5{
+    width: 6px;
+    height: 10px;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-bottom-left-radius: 3px;
+    position: absolute;
+    top: 50px;
+    left: 47px;
+}
+.child-6{
+    width: 23px;
+    height: 4px;
+    border: 3px solid black;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 70px;
+    left: 37px;
+}
+.child-7{
+    width: 40px;
+    height: 25px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    background-color: rgba(250, 214, 171, 0.999);
+    position: absolute;
+    top: 128px;
+    left: 694px;
+}
+.child-8{
+    width: 100px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: absolute;
+    top: 123px;
+    left: -2px;
+}
+.shirt1{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(122, 122, 130, 0.501);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    top: 123px;
+    left: -2px;
+}
+.shirt2{
+    width: 100px;
+    height: 50px;
+    background-color: rgba(2, 2, 27, 0.82);
+    border-radius: 4px;
+    top: 123px;
+    left: -2px;
+}
+.child1-8{
+    width: 100px;
+    height: 8px;
+    border: 1px solid brown;
+    background-color: rgba(165, 42, 42, 0.863);
+    border-radius: 3px;
+    position: absolute;
+    top: 218px;
+    left: -1px;
+}
+.child2-8{
+    height: 10px;
+    border-left: 2px solid black;
+    position: absolute;
+    top: 218px;
+    left: 10px;
+}
+.child3-8{
+    height: 10px;
+    border-left: 2px solid black;
+    position: absolute;
+    top: 218px;
+    left: 30px;
+}
+.child4-8{
+    width: 10px;
+    height: 6px;
+    border: 2px solid black;
+    background-color: azure;
+    position: absolute;
+    top: 218px;
+    left: 44px;
+}
+.child5-8{
+    height: 10px;
+    border-left: 2px solid black;
+    position: absolute;
+    top: 218px;
+    left: 70px;
+}
+.child6-8{
+    height: 10px;
+    border-left: 2px solid black;
+    position: absolute;
+    top: 218px;
+    left: 90px;
+}
+.child7-8{
+    height: 95px;
+    border-left: 8px solid black;
+    position: absolute;
+    top: 123px;
+    left: 44px;
+    opacity: 0.4;
+}
+.child8-8{
+    width: 28px;
+    height: 30px;
+    border: 2px solid black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(150, 169, 169);
+    position: absolute;
+    top: 150px;
+    left: 60%;
+}
+.child9-8{
+    width: 28px;
+    height: 10px;
+    border: 2px solid black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    top: 150px;
+    left: 60%;
+}
+.child-9{
+    width: 3px;
+    height: 3px;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 3px;
+    position: absolute;
+    top: 159px;
+    left: 72px;
+}
+.child-10{
+    height: 48px;
+    border-left: 2px solid black;
+    position: absolute;
+    top: 228px;
+    left: 50px;
+}
+.child-11{
+    width: 105px;
+    height: 15px;
+    border: 2px solid black;
+    background-color: rgb(247, 218, 181);
+    position: absolute;
+    top: 127px;
+    left: 100px;
+}
+.child-12{
+    width: 105px;
+    height: 15px;
+    border: 2px solid black;
+    background-color: rgb(247, 218, 181);
+    position: absolute;
+    top: 127px;
+    left: -109px;
+}
+.child-13{
+    width: 15px;
+    height: 100px;
+    border: 2px solid black;
+    background-color: rgb(247, 218, 181);
+    position: absolute;
+    top: 275px;
+    left: 10px;
+}
+.sock-1{
+    width: 15px;
+    height: 40px;
+    border: 2px solid black;
+    background-color: aliceblue;
+    position: absolute;
+    top: 57px;
+    left: -2px;
+}
+.sock-line1{
+    width: 15px;
+    border-top: 2px solid black;
+    position: absolute;
+    top: 5px;
+    left: 0px;
+}
+.child-14{
+    width: 15px;
+    height: 100px;
+    border: 2px solid black;
+    background-color: rgb(247, 218, 181);
+    position: absolute;
+    top: 275px;
+    left: 70px;
+}
+.sock-2{
+    width: 15px;
+    height: 40px;
+    border: 2px solid black;
+    background-color: aliceblue;
+    position: absolute;
+    top: 57px;
+    left: -2px;
+}
+.sock-line2{
+    width: 15px;
+    border-top: 2px solid black;
+    position: absolute;
+    top: 5px;
+    left: 0px;
+}
+.child-15{
+    width: 43px;
+    height: 20px;
+    border: 2px solid black;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-width: 3px;
+    background-color: rgb(62, 46, 26);
+    position: absolute;
+    top: 377;
+    left: 3px;
+}
+.child-16{
+    width: 43px;
+    height: 20px;
+    border: 2px solid black;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-width: 3px;
+    background-color: rgb(62, 46, 26);
+    position: absolute;
+    top: 377px;
+    left: 63px;
+}
+.hand1{
+    width: 30px;
+    height: 22px;
+    border: 2px solid black;
+    background-color: blanchedalmond;
+    border-radius: 3px;
+    position: absolute;
+    top: 123px;
+    left: -141px;
+}
+.hand2{
+    width: 30px;
+    height: 22px;
+    border: 2px solid black;
+    background-color: blanchedalmond;
+    border-radius: 3px;
+    position: absolute;
+    top: 123px;
+    left: 207px;
+}
+.fing1{
+    width: 5px;
+    height: 17px;
+    border: 2px solid black;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: rgb(244, 225, 201);
+    position: absolute;
+    top: 104px;
+    left: 210px;
+}
+.fing2{
+    width: 19px;
+    height: 4px;
+    border: 2px solid black;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: rgb(244, 225, 201);
+    position: absolute;
+    top: 123px;
+    left: 239px;
+}
+.fing3{
+    width: 25px;
+    height: 5px;
+    border: 2px solid black;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: rgb(244, 225, 201);
+    position: absolute;
+    top: 129px;
+    left: 239px;
+}
+.fing4{
+    width: 22px;
+    height: 4px;
+    border: 2px solid black;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: rgb(244, 225, 201);
+    position: absolute;
+    top: 136px;
+    left: 239px;
+}
+.fing5{
+    width: 13px;
+    height: 3px;
+    border: 2px solid black;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: rgb(244, 225, 201);
+    position: absolute;
+    top: 142px;
+    left: 239px;
+}
+.fing6{
+    width: 5px;
+    height: 17px;
+    border: 2px solid black;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: rgb(244, 225, 201);
+    position: absolute;
+    top: 104px;
+    left: -119px;
+}
+.fing7{
+    width: 19px;
+    height: 4px;
+    border: 2px solid black;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: rgb(244, 225, 201);
+    position: absolute;
+    top: 123px;
+    left: -162px;
+}
+.fing8{
+    width: 25px;
+    height: 5px;
+    border: 2px solid black;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: rgb(244, 225, 201);
+    position: absolute;
+    top: 129px;
+    left: -168px;
+}
+.fing9{
+    width: 22px;
+    height: 4px;
+    border: 2px solid black;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: rgb(244, 225, 201);
+    position: absolute;
+    top: 136px;
+    left: -165px;
+}
+.fing10{
+    width: 13px;
+    height: 3px;
+    border: 2px solid black;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: rgb(244, 225, 201);
+    position: absolute;
+    top: 142px;
+    left: -156px;
+}
+.button1{
+    width: 4px;
+    height: 3px;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 3px;
+    position: absolute;
+    top: 128px;
+    left: 45px;
+}
+.button2{
+    width: 4px;
+    height: 3px;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 3px;
+    position: absolute;
+    top: 147px;
+    left: 45px;
+}
+.button3{
+    width: 4px;
+    height: 3px;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 3px;
+    position: absolute;
+    top: 168px;
+    left: 45px;
+}
+.button4{
+    width: 4px;
+    height: 3px;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 3px;
+    position: absolute;
+    top: 189px;
+    left: 45px;
+}
+.button5{
+    width: 4px;
+    height: 3px;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 3px;
+    position: absolute;
+    top: 210px;
+    left: 45px;
+}

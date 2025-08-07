@@ -1,0 +1,55 @@
+.header {
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    box-shadow: 0 0 5px 5px silver;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;  
+    align-items: center;             
+    padding: 0 18px;                 
+}
+
+.header img {
+    width: 140px;
+    height: 70px;
+}
+.subhead a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.subhead a:hover{
+    color:yellow;
+    border-radius: 2px yellow;
+
+}
+.first{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+.first img{
+    position: relative;
+    margin-right: -750px;
+}
+.ME{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.Hireme{
+    font-size: 13px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(34, 174, 221);
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor:pointer;
+    margin-bottom: 20px;
+    /* transition: background-color 2s linear; */
+}
+

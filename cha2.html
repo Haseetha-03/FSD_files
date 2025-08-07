@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriAssist | Disease Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f6fef9;
+            color: #333;
+        }
+
+        header {
+            background-color: #e0f8e9;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #2c6e49;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #2c6e49;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1d4d35;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 2rem;
+        }
+
+        .hero-text {
+            flex: 1 1 400px;
+            animation: fadeUp 1s ease-in;
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            color: #2c6e49;
+        }
+
+        .hero-text p {
+            margin: 1rem 0;
+            color: #555;
+        }
+
+        .hero-text button {
+            padding: 0.8rem 1.5rem;
+            background-color: #74c69d;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(116, 198, 157, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-text button:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-image {
+            flex: 1 1 300px;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .section {
+            padding: 3rem 2rem;
+            background-color: #fff;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h3 {
+            color: #2c6e49;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .dropdowns, .upload-box, .result, .treatment, .knowledge {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .dropdowns select, .upload-box input[type="file"] {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+        }
+
+        .upload-box {
+            border: 2px dashed #ccc;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .upload-box:hover {
+            background-color: #f0fff5;
+        }
+
+        .upload-box button {
+            margin-top: 1rem;
+            background-color: #74c69d;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .result, .treatment, .knowledge {
+            margin-top: 2rem;
+        }
+
+        .result h4, .treatment h4, .knowledge h4 {
+            color: #2c6e49;
+            margin-bottom: 1rem;
+        }
+
+        .result .card, .treatment .card, .knowledge .card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .knowledge .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card p {
+            margin: 0.5rem 0;
+        }
+
+        .footer {
+            background-color: #2c6e49;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 2rem;
+            border-top: 4px solid #74c69d;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AgriAssist</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Dashboard</a>
+            <a href="#">Disease Detection</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>AI-Powered Disease Detection</h2>
+            <p>Quickly detect diseases in your crops or poultry using advanced AI-powered image analysis.</p>
+            <button>Detect Now</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/400x300.png?text=Disease+Detection" alt="Disease Detection AI Image">
+        </div>
+    </section>
+
+    <section class="section dropdowns">
+        <h3>🌱 Select Your Target</h3>
+        <select>
+            <option>Select Category</option>
+            <option>Crop</option>
+            <option>Poultry</option>
+        </select>
+        <select>
+            <option>Select Type</option>
+            <option>Grains</option>
+            <option>Vegetables</option>
+            <option>Chicken</option>
+            <option>Duck</option>
+        </select>
+    </section>
+
+    <section class="section upload-box">
+        <h3>📤 Upload Image for Analysis</h3>
+        <input type="file" accept="image/*">
+        <button>Analyze Image</button>
+    </section>
+
+    <section class="section result">
+        <h3>🔬 Analysis Result</h3>
+        <div class="card">
+            <h4>Disease Identified: Early Blight</h4>
+            <p>Confidence: 95%</p>
+            <p>Brief Description: A fungal disease causing dark spots on leaves.</p>
+        </div>
+    </section>
+
+    <section class="section treatment">
+        <h3>💊 Treatment & Prevention</h3>
+        <div class="card">
+            <p>✔ Remove affected leaves immediately.</p>
+            <p>✔ Apply organic fungicide regularly.</p>
+            <p>✔ Rotate crops to prevent recurrence.</p>
+        </div>
+    </section>
+
+    <section class="section knowledge">
+        <h3>📚 Explore Disease Database</h3>
+        <input type="text" placeholder="Search diseases..." style="width:100%; padding:0.8rem; border-radius:12px; border:1px solid #ccc; margin-bottom:1rem;">
+        <div class="card">
+            <h4>Fowl Pox</h4>
+            <p>Common in poultry. Causes wart-like lesions on skin.</p>
+            <button style="margin-top:0.5rem; background-color:#74c69d; color:white; border:none; padding:0.5rem 1rem; border-radius:10px;">Learn More</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 AgriAssist. All Rights Reserved.</p>
+        <p>Follow us on social media | Contact: support@agriassist.com</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100svh;
+    width: 100%;
+    perspective: 1000px;
+}
+.cube{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border: 2px solid black;
+    display: flex;
+    background-image: linear-gradient(rgb(203, 94, 219), black);
+    position: relative;
+    animation: myanimations 4s linear;
+    transform-style: preserve-3d;
+}
+@keyframes myanimations {
+    100%{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+} 
+.cube div{
+     width: 200px;
+    height:200px;
+    background-image: conic-gradient(black,rgb(223, 151, 219) ,black);
+    position: absolute;
+}
+.left{
+    transform: rotateY(90deg) translateZ(100px);
+}
+.right{
+    transform: rotateY(90deg) translateZ(-100px);
+}
+.top{
+    transform: rotateX(90deg) translateZ(-100px);
+}
+.bottom{
+    transform: rotateX(90deg) translateZ(100px);
+}
+.front{
+       transform: translateZ(100px);
+}
+.back{
+    transform: translatez(-100px);
+}

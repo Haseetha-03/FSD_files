@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriAssist - Poultry Farming Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="poultry.css">
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-green-700 text-white p-4 shadow-lg w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold">AgriAssist</a>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="px-3 py-2 rounded-md hover:bg-green-600">Home</a>
+                <a href="#agriculture" class="px-3 py-2 rounded-md hover:bg-green-600">Agriculture</a>
+                <a href="#weather" class="px-3 py-2 rounded-md hover:bg-green-600">Weather</a>
+                <a href="#marketplace" class="px-3 py-2 rounded-md hover:bg-green-600">Market Place</a>
+                <a href="#contact" class="px-3 py-2 rounded-md hover:bg-green-600">Contact Us</a>
+                <a href="#login" class="px-3 py-2 rounded-md hover:bg-green-600">Login / Register</a>
+                <div class="relative group ml-4">
+                    <button class="px-3 py-2 rounded-md flex items-center hover:bg-green-600">
+                        <i class="fa-solid fa-globe mr-2 text-sm"></i> Language <i class="fa-solid fa-chevron-down ml-2 text-sm"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-green-800 text-white rounded-md shadow-lg mt-2 w-32 right-0">
+                        <button class="block w-full text-left px-4 py-2 hover:bg-green-600 rounded-t-md">English</button>
+                        <button class="block w-full text-left px-4 py-2 hover:bg-green-600">Hindi</button>
+                    </div>
+                </div>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden mt-4 bg-green-800 rounded-md shadow-lg">
+            <a href="#home" class="block px-4 py-2 text-white hover:bg-green-600 rounded-t-md">Home</a>
+            <a href="#agriculture" class="block px-4 py-2 text-white hover:bg-green-600">Agriculture</a>
+            <a href="#aquaculture" class="block px-4 py-2 text-white hover:bg-green-600">Aquaculture</a>
+            <a href="#poultry" class="block px-4 py-2 text-white hover:bg-green-600">Poultry</a>
+            <a href="#organic" class="block px-4 py-2 text-white hover:bg-green-600">Organic Farming</a>
+            <a href="#apiculture" class="block px-4 py-2 text-white hover:bg-green-600">Apiculture</a>
+            <a href="#sericulture" class="block px-4 py-2 text-white hover:bg-green-600">Sericulture</a>
+            <a href="#weather" class="block px-4 py-2 text-white hover:bg-green-600">Weather</a>
+            <a href="#marketplace" class="block px-4 py-2 text-white hover:bg-green-600">Market Place</a>
+            <a href="#contact" class="block px-4 py-2 text-white hover:bg-green-600">Contact Us</a>
+            <a href="#login" class="block px-4 py-2 text-white hover:bg-green-600 rounded-b-md">Login / Register</a>
+            <button class="block w-full text-left px-4 py-2 text-white hover:bg-green-600">English</button>
+            <button class="block w-full text-left px-4 py-2 text-white hover:bg-green-600">Hindi</button>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-16"> 
+        <section id="poultry-farming-management" class="page-section active bg-gray-50 py-8">
+            <div class="container mx-auto px-4">
+
+                <section class="hero-background text-white py-16 px-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center justify-center text-center md:text-left h-[400px] relative overflow-hidden animate-fadeIn">
+                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRydnnaeDTaef51df2kjj9I4bEcdk19AGe6SA&s" alt="Apiculture Hero Background" class="absolute inset-0 w-full h-full object-cover z-0">
+                    <div class="hero-overlay absolute inset-0"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row items-center w-full">
+                        <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 animate-slideInUp">
+                            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight drop-shadow-lg text-green-200">
+                                <!-- AI-Powered  --> Poultry Farming Management
+                            </h1>
+                            <p class="text-lg md:text-xl mb-8 opacity-90">
+                                Optimize your poultry farming practices with AI-driven insights for bird health, feed management, and egg/meat production.
+                            </p>
+                            <button id="manage-poultry-farm-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg shadow-green-500/50">
+                                Manage Poultry Farm
+                            </button>
+                        </div>
+                        <!-- <div class="md:w-1/2 flex justify-center items-center animate-fadeIn" style="animation-delay: 0.3s;">
+                            <img src="data:image/jpeg;base64,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" alt="AI Poultry Farming Management" class="rounded-xl shadow-xl max-w-full h-auto">
+                        </div> -->
+                    </div>
+                </section>
+
+                <!-- Select Poultry Type -->
+                <section class="bg-white p-8 rounded-xl shadow-lg mt-8 animate-slideInUp" style="animation-delay: 0.2s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-feather-alt text-green-600 mr-3"></i> Select Poultry Type
+                    </h2>
+                    <div class="max-w-md mx-auto">
+                        <div>
+                            <label for="poultry-type" class="block text-gray-700 text-sm font-bold mb-2">Choose your poultry type:</label>
+                            <select id="poultry-type" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                                <option value="">Select Animal</option>
+                                <option value="chicken-broiler">Chicken (Broiler)</option>
+                                <option value="chicken-layer">Chicken (Layer)</option>
+                                <option value="duck">Duck</option>
+                                <option value="turkey">Turkey</option>
+                                <option value="quail">Quail</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+                <section class="bg-white p-8 rounded-xl shadow-lg mt-8 animate-slideInUp" style="animation-delay: 0.3s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-house-chimney-user text-green-600 mr-3"></i> Select Rearing System
+                    </h2>
+                    <div class="max-w-md mx-auto">
+                        <label for="rearing-system" class="block text-gray-700 text-sm font-bold mb-2">What is your rearing system?</label>
+                        <select id="rearing-system" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                            <option value="">Select Method</option>
+                            <option value="cage-system">Cage System</option>
+                            <option value="deep-litter-system">Deep Litter System</option>
+                            <option value="free-range">Free-Range</option>
+                            <option value="semi-intensive">Semi-Intensive</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="bg-white p-8 rounded-xl shadow-lg mt-8 animate-slideInUp" style="animation-delay: 0.4s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-stethoscope text-green-600 mr-3"></i> Upload Image for Bird Health Analysis
+                    </h2>
+                    <div id="bird-health-upload-area" class="dashed-border rounded-lg p-12 text-center cursor-pointer hover:bg-gray-50 transition-all duration-200 mb-8">
+                        <input type="file" id="bird-health-image-upload" accept="image/jpeg,image/png,image/webp" class="hidden">
+                        <label for="bird-health-image-upload" class="cursor-pointer block">
+                            <i class="fa-solid fa-image text-green-500 text-7xl mb-4"></i>
+                            <p class="text-gray-700 text-lg font-medium">Drag & Drop Bird Image Here, or <span class="text-green-600 font-semibold">Click to Browse</span></p>
+                            <p class="text-gray-500 text-sm mt-2">Supported formats: JPG, PNG, WebP. Max file size: 5MB. For best results, upload clear, well-lit images of the bird or affected area.</p>
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <img id="bird-health-uploaded-image-preview" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_OTbgVRx8qzFBUTmmjUF6mrerqOFMelD0SQ&s" alt="Bird Health Image Preview" class="max-w-full h-auto rounded-lg shadow-md mx-auto mb-6">
+                        <button id="analyze-bird-health-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full text-xl transition-all duration-300 shadow-lg shadow-green-500/50 flex items-center justify-center mx-auto">
+                            <span id="bird-health-button-text">Analyze Bird Health</span>
+                            <div id="bird-health-loading-spinner" class="spinner ml-3 hidden"></div>
+                        </button>
+                    </div>
+                </section>
+
+        
+                <section id="bird-health-results-section" class="bg-white p-8 rounded-xl shadow-lg mt-8 animate-slideInUp" style="animation-delay: 0.6s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-notes-medical text-green-600 mr-3"></i> Bird Health Analysis Result
+                    </h2>
+                    <div class="bg-green-50 p-6 rounded-lg shadow-inner border border-green-200 text-center">
+                        <h3 id="detected-bird-issue-name" class="text-4xl font-extrabold text-green-800 mb-2">Avian Influenza (Bird)</h3>
+                        <p class="text-xl text-gray-700 mb-4">Confidence: <span id="bird-confidence-score" class="font-semibold text-green-700">92%</span></p>
+                        <p id="bird-issue-description" class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-6">Avian Influenza (Bird Flu) is a highly contagious viral disease affecting poultry, causing respiratory distress, reduced egg production, and high mortality.</p>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTldxnywf7M-7hKJJSX5M6TrNIna0xb0b8-LA&s" alt="Example of Avian Influenza" class="max-w-full h-auto rounded-lg shadow-md mx-auto mt-4">
+                    </div>
+                </section>
+                <section class="bg-white p-8 rounded-xl shadow-lg mt-8 animate-slideInUp" style="animation-delay: 0.8s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-shield-alt text-green-600 mr-3"></i> Bird Health Management & Prevention
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-green-700 mb-4">Immediate Treatment:</h3>
+                            <ul id="immediate-bird-treatment-list" class="list-none space-y-3 text-gray-700">
+                                <li><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Isolate sick birds immediately to prevent spread.</li>
+                                <li><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Administer antiviral medication if available and prescribed by a vet.</li>
+                                <li><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Improve ventilation and sanitation in infected areas.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-green-700 mb-4">Long-term Prevention:</h3>
+                            <ul id="long-term-bird-prevention-list" class="list-none space-y-3 text-gray-700">
+                                <li><i class="fa-solid fa-shield-alt text-green-500 mr-2"></i> Implement strict biosecurity measures (e.g., footbaths, restricted access).</li>
+                                <li><i class="fa-solid fa-shield-alt text-green-500 mr-2"></i> Vaccinate flocks against common poultry diseases as per local guidelines.</li>
+                                <li><i class="fa-solid fa-shield-alt text-green-500 mr-2"></i> Control wild bird access to poultry areas to minimize disease transmission.</li>
+                                <li><i class="fa-solid fa-shield-alt text-green-500 mr-2"></i> Regularly clean and disinfect poultry houses and equipment.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p id="bird-further-action" class="text-lg text-gray-700 mt-8 text-center">For effective disease control, implement a comprehensive biosecurity plan and consult a poultry veterinarian for diagnosis and treatment.</p>
+                </section>
+                <section class="bg-white p-8 rounded-xl shadow-lg mt-8 animate-slideInUp" style="animation-delay: 0.9s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-water-droplet text-green-600 mr-3"></i> Upload Image for Feed/Water Quality Analysis
+                    </h2>
+                    <div id="feed-water-upload-area" class="dashed-border rounded-lg p-12 text-center cursor-pointer hover:bg-gray-50 transition-all duration-200 mb-8">
+                        <input type="file" id="feed-water-image-upload" accept="image/jpeg,image/png,image/webp" class="hidden">
+                        <label for="feed-water-image-upload" class="cursor-pointer block">
+                            <i class="fa-solid fa-image text-green-500 text-7xl mb-4"></i>
+                            <p class="text-gray-700 text-lg font-medium">Drag & Drop Feed/Water Sample Image Here, or <span class="text-green-600 font-semibold">Click to Browse</span></p>
+                            <p class="text-gray-500 text-sm mt-2">Supported formats: JPG, PNG, WebP. Max file size: 5MB. For best results, upload clear, well-lit images of feed or water samples.</p>
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <img id="feed-water-uploaded-image-preview" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAAbyEfq2UYHBnbrdMKQPz2xju9ftxfKcv9w&s" alt="Feed/Water Image Preview" class="max-w-full h-auto rounded-lg shadow-md mx-auto mb-6">
+                        <button id="analyze-feed-water-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full text-xl transition-all duration-300 shadow-lg shadow-green-500/50 flex items-center justify-center mx-auto">
+                            <span id="feed-water-button-text">Analyze Feed/Water Quality</span>
+                            <div id="feed-water-loading-spinner" class="spinner ml-3 hidden"></div>
+                        </button>
+                    </div>
+                </section>
+                <section class="bg-white p-8 rounded-xl shadow-lg mt-8 animate-slideInUp" style="animation-delay: 1.0s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-chart text-green-600 mr-3"></i> Feed/Water Quality Analysis Result
+                    </h2>
+                    <div class="bg-green-50 p-6 rounded-lg shadow-inner border border-green-200 text-center">
+                        <h3 id="detected-feed-water-issue-name" class="text-4xl font-extrabold text-green-800 mb-2">Aflatoxin Contamination (Feed)</h3>
+                        <p class="text-xl text-gray-700 mb-4">Confidence: <span id="feed-water-confidence-score" class="font-semibold text-green-700">90%</span></p>
+                        <p id="feed-water-issue-description" class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-6">Aflatoxins are toxic compounds produced by certain molds in feed, causing liver damage, immunosuppression, and reduced productivity in poultry.</p>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAAbyEfq2UYHBnbrdMKQPz2xju9ftxfKcv9w&s" alt="Example of Aflatoxin Contamination" class="max-w-full h-auto rounded-lg shadow-md mx-auto mt-4">
+                    </div>
+                </section>
+                <section class="bg-white p-8 rounded-xl shadow-lg mt-8 animate-slideInUp" style="animation-delay: 1.1s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-faucet-drip text-green-600 mr-3"></i> Feed/Water Quality Management & Prevention
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-green-700 mb-4">Control Measures:</h3>
+                            <ul id="feed-water-control-list" class="list-none space-y-3 text-gray-700">
+                                <li><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Discard visibly moldy or contaminated feed.</li>
+                                <li><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Provide fresh, clean drinking water to birds daily.</li>
+                                <li><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Consider using mold inhibitors in feed if necessary.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-green-700 mb-4">Preventive Strategies:</h3>
+                            <ul id="feed-water-prevention-list" class="list-none space-y-3 text-gray-700">
+                                <li><i class="fa-solid fa-shield-virus text-green-500 mr-2"></i> Store feed in dry, cool, and well-ventilated areas away from pests.</li>
+                                <li><i class="fa-solid fa-shield-virus text-green-500 mr-2"></i> Prevent rodent and insect access to feed storage areas.</li>
+                                <li><i class="fa-solid fa-shield-virus text-green-500 mr-2"></i> Regularly clean and disinfect water lines and drinkers to prevent biofilm growth.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p id="feed-water-further-action" class="text-lg text-gray-700 mt-8 text-center">Regular testing of feed and water, along with proper storage and hygiene, are critical for poultry health and productivity.</p>
+                </section>
+                <section class="bg-white p-8 rounded-xl shadow-lg mt-8 animate-slideInUp" style="animation-delay: 1.2s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-egg text-green-600 mr-3"></i> Nutrition Recommendation
+                    </h2>
+                    <div class="max-w-xl mx-auto space-y-6">
+                        <div>
+                            <label for="rec-poultry-type" class="block text-gray-700 text-sm font-bold mb-2">Poultry Type for Recommendation:</label>
+                            <select id="rec-poultry-type" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                                <option value="">Select Animal</option>
+                                <option value="broiler">Broiler</option>
+                                <option value="layer">Layer</option>
+                                <option value="duck">Duck</option>
+                                <option value="turkey">Turkey</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="growth-stage-nutrition" class="block text-gray-700 text-sm font-bold mb-2">Growth Stage / Production Status:</label>
+                            <input type="text" id="growth-stage-nutrition" placeholder="e.g., Starter, Grower, Finisher, Layer" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                        <div>
+                            <label for="protein-content-nutrition" class="block text-gray-700 text-sm font-bold mb-2">Desired Protein Content (%):</label>
+                            <input type="number" id="protein-content-nutrition" step="1" min="10" max="30" placeholder="e.g., 20" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                        <div>
+                            <label for="energy-content-nutrition" class="block text-gray-700 text-sm font-bold mb-2">Desired Energy (Kcal/kg ME):</label>
+                            <input type="text" id="energy-content-nutrition" placeholder="e.g., 2800 Kcal/kg ME" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                        <div>
+                            <label for="vitamin-mineral-supplements" class="block text-gray-700 text-sm font-bold mb-2">Vitamin/Mineral Supplements (e.g., Vit A, D3, B complex, Ca, P):</label>
+                            <input type="text" id="vitamin-mineral-supplements" placeholder="e.g., Vitamin A, D3, B Complex, Calcium, Phosphorus" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                        <div class="text-center">
+                            <button id="get-nutrition-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg shadow-green-500/50 flex items-center justify-center mx-auto">
+                                <span id="nutrition-button-text">Get Nutrition Recommendation</span>
+                                <div id="nutrition-loading-spinner" class="spinner ml-3 hidden"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="nutrition-results-section" class="bg-green-50 p-6 rounded-lg shadow-inner border border-green-200 text-center mt-8">
+                        <h3 class="text-2xl font-extrabold text-green-800 mb-2">Recommended Nutrition Plan:</h3>
+                        <p id="nutrition-recommendation-text" class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-4">For broiler starter chicks, a feed with 20-23% crude protein and 2800-3000 Kcal/kg ME is recommended. Ensure adequate vitamins (A, D3, B complex) and minerals (Calcium, Phosphorus) for optimal growth.</p>
+                        <p class="text-sm text-gray-600">Always consult a poultry nutritionist for precise feed formulations based on bird specific needs and local feed availability.</p>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq3fSXIvyMLraqS63gCoFNYPBTVofwCG_-vQ&s" alt="Poultry Nutrition Example" class="max-w-full h-auto rounded-lg shadow-md mx-auto mt-4">
+                    </div>
+                </section>
+                <section class="bg-white p-8 rounded-xl shadow-lg mt-8 animate-slideInUp" style="animation-delay: 1.4s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-book-open text-green-600 mr-3"></i> Explore Poultry Health Database / Common Issues
+                    </h2>
+                    <div class="mb-8 max-w-xl mx-auto">
+                        <div class="relative">
+                            <input type="text" id="poultry-issue-search" placeholder="Search for poultry diseases or farm issues..." class="w-full py-3 px-5 pr-12 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                            <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div id="poultry-issue-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-green-50 p-6 rounded-lg shadow-md card-hover-effect border border-green-100">
+                            <i class="fa-solid fa-virus text-green-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-green-800 mb-2">Avian Influenza (Bird Flu)</h3>
+                            <p class="text-gray-700 text-sm">Highly contagious viral disease affecting poultry, causing respiratory issues and high mortality.</p>
+                            <img src="data:image/jpeg;base64,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" alt="Avian Influenza" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-green-500 hover:bg-green-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-red-50 p-6 rounded-lg shadow-md card-hover-effect border border-red-100">
+                            <i class="fa-solid fa-lungs text-red-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-red-800 mb-2">Newcastle Disease</h3>
+                            <p class="text-gray-700 text-sm">Viral disease causing respiratory, nervous, and digestive signs in poultry.</p>
+                            <img src="data:image/jpeg;base64,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" alt="Newcastle Disease" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-red-500 hover:bg-red-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-yellow-50 p-6 rounded-lg shadow-md card-hover-effect border border-yellow-100">
+                            <i class="fa-solid fa-microscope text-yellow-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-yellow-800 mb-2">Coccidiosis</h3>
+                            <p class="text-gray-700 text-sm">Parasitic disease causing intestinal damage, leading to bloody droppings and poor growth.</p>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiO6LAij0bF63HuScdTYn7sm5hoXS8brM7fw&s" alt="Coccidiosis" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-purple-50 p-6 rounded-lg shadow-md card-hover-effect border border-purple-100">
+                            <i class="fa-solid fa-dna text-purple-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-purple-800 mb-2">Marek's Disease</h3>
+                            <p class="text-gray-700 text-sm">Viral disease causing paralysis, tumors, and immunosuppression in chickens.</p>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoZDL6DHzR2-xLH0Jb0eDgHus0H3z15H_I1ssKlvHXVujwkxXMWvtFIVgiNVZZ3U_FDQE&usqp=CAU" alt="Marek's Disease" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-lg shadow-md card-hover-effect border border-orange-100">
+                            <i class="fa-solid fa-feather text-orange-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-orange-800 mb-2">Fowl Pox</h3>
+                            <p class="text-gray-700 text-sm">Viral disease causing skin lesions, scabs on unfeathered areas, and sometimes diphtheritic lesions in mouth.</p>
+                            <img src="data:image/jpeg;base64,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" alt="Fowl Pox" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-orange-500 hover:bg-orange-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg shadow-md card-hover-effect border border-blue-100">
+                            <i class="fa-solid fa-lungs-virus text-blue-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2">Infectious Bronchitis</h3>
+                            <p class="text-gray-700 text-sm">Highly contagious viral respiratory disease, also causing reduced egg production and quality.</p>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDSwxk-glIunzmnxrpqEVHdjl6gt3sAn_KfQ&s" alt="Infectious Bronchitis" class="rounded-lg mt-4 mx-auto">
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Back to Home Button -->
+                <section class="py-8 px-4 bg-gray-100 text-center rounded-xl shadow-lg mt-8">
+                    <a href="#home" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200">
+                        <i class="fa-solid fa-home mr-2"></i> Back to Home
+                    </a>
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="bg-gray-800 text-white py-10 px-4 mt-auto">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">AgriAssist</h3>
+                    <p class="text-sm text-gray-400">Cultivating a smarter, more productive tomorrow.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#home" class="hover:text-white transition duration-200">Home</a></li>
+                        <li><a href="#weather" class="hover:text-white transition duration-200">Weather</a></li>
+                        <li><a href="#marketplace" class="hover:text-white transition duration-200">Marketplace</a></li>
+                        <li><a href="#contact" class="hover:text-white transition duration-200">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3 text-white">Connect with Us</h4>
+                    <div class="flex justify-center md:justify-start space-x-4 mb-3">
+                        <a href="#" class="hover:text-white text-gray-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white text-gray-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-white text-gray-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white text-gray-400"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p class="text-gray-400 text-sm">Email: support@agriassist.com</p>
+                    <p class="text-gray-400 text-sm">Developer credits &copy; 2024</p>
+                </div>
+            </div>
+
+            <hr class="border-gray-700 mb-4">
+
+            <p class="text-center text-sm text-gray-500">&copy; 2024 AgriAssist. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

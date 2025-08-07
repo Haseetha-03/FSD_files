@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriAssist - Disease Detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="PO.CSS">
+</head>
+<body class="flex flex-col min-h-screen">
+
+   
+    <header class="bg-green-700 text-white p-4 shadow-lg w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold">AgriAssist</a>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="px-3 py-2 rounded-md hover:bg-green-600">Home</a>
+                <a href="#agriculture" class="px-3 py-2 rounded-md hover:bg-green-600">Agriculture</a>
+                <a href="#weather" class="px-3 py-2 rounded-md hover:bg-green-600">Weather</a>
+                <a href="#marketplace" class="px-3 py-2 rounded-md hover:bg-green-600">Market Place</a>
+                <a href="#contact" class="px-3 py-2 rounded-md hover:bg-green-600">Contact Us</a>
+                <a href="#login" class="px-3 py-2 rounded-md hover:bg-green-600">Login / Register</a>
+                <div class="relative group ml-4">
+                    <button class="px-3 py-2 rounded-md flex items-center hover:bg-green-600">
+                        <i class="fa-solid fa-globe mr-2 text-sm"></i> Language <i class="fa-solid fa-chevron-down ml-2 text-sm"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-green-800 text-white rounded-md shadow-lg mt-2 w-32 right-0">
+                        <button class="block w-full text-left px-4 py-2 hover:bg-green-600 rounded-t-md">English</button>
+                        <button class="block w-full text-left px-4 py-2 hover:bg-green-600">Hindi</button>
+                    </div>
+                </div>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden mt-4 bg-green-800 rounded-md shadow-lg">
+            <a href="#home" class="block px-4 py-2 text-white hover:bg-green-600 rounded-t-md">Home</a>
+            <a href="#agriculture" class="block px-4 py-2 text-white hover:bg-green-600">Agriculture</a>
+            <a href="#aquaculture" class="block px-4 py-2 text-white hover:bg-green-600">Aquaculture</a>
+            <a href="#poultry" class="block px-4 py-2 text-white hover:bg-green-600">Poultry</a>
+            <a href="#organic" class="block px-4 py-2 text-white hover:bg-green-600">Organic Farming</a>
+            <a href="#apiculture" class="block px-4 py-2 text-white hover:bg-green-600">Apiculture</a>
+            <a href="#sericulture" class="block px-4 py-2 text-white hover:bg-green-600">Sericulture</a>
+            <a href="#weather" class="block px-4 py-2 text-white hover:bg-green-600">Weather</a>
+            <a href="#marketplace" class="block px-4 py-2 text-white hover:bg-green-600">Market Place</a>
+            <a href="#contact" class="block px-4 py-2 text-white hover:bg-green-600">Contact Us</a>
+            <a href="#login" class="block px-4 py-2 text-white hover:bg-green-600 rounded-b-md">Login / Register</a>
+            <button class="block w-full text-left px-4 py-2 text-white hover:bg-green-600">English</button>
+            <button class="block w-full text-left px-4 py-2 text-white hover:bg-green-600">Hindi</button>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-16"> 
+
+        <section id="disease-detection" class="page-section active bg-gray-50 py-8">
+            <div class="container mx-auto px-4">
+
+                <section class="hero-background text-white py-16 px-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center justify-center text-center md:text-left h-[400px] mb-12 relative overflow-hidden animate-fadeIn">
+                    <div class="hero-overlay absolute inset-0"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row items-center w-full">
+                        <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 animate-slideInUp">
+                            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight drop-shadow-lg text-green-200">
+                                AI-Powered Disease Detection
+                            </h1>
+                            <p class="text-lg md:text-xl mb-8 opacity-90">
+                                Quickly identify diseases affecting your crops or poultry from images, enabling timely action and protecting your yield.
+                            </p>
+                            <button id="detect-now-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg shadow-green-500/50">
+                                Detect Now
+                            </button>
+                        </div>
+                        <div class="md:w-1/2 flex justify-center items-center animate-fadeIn" style="animation-delay: 0.3s;">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2EXgY75yfVDnaC7TTwl4PrgnMMu1LRd_Q3w&s" alt="AI Disease Detection" class="rounded-xl shadow-xl max-w-full h-auto">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 0.2s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-seedling text-green-600 mr-3"></i> Select Your Target
+                    </h2>
+                    <div class="max-w-md mx-auto space-y-4">
+                        <div>
+                            <label for="target-type" class="block text-gray-700 text-sm font-bold mb-2">What are you detecting for?</label>
+                            <select id="target-type" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                                <option value="">Select Category</option>
+                                <option value="crop">Crop</option>
+                                <option value="poultry">Poultry</option>
+                            </select>
+                        </div>
+                        <div id="crop-subtype-container" class="hidden">
+                            <label for="crop-subtype" class="block text-gray-700 text-sm font-bold mb-2">Select Crop Type:</label>
+                            <select id="crop-subtype" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                                <option value="">Select Crop Type</option>
+                                <option value="grains">Grains (e.g., Wheat, Rice)</option>
+                                <option value="vegetables">Vegetables (e.g., Tomato, Potato)</option>
+                                <option value="fruits">Fruits (e.g., Mango, Banana)</option>
+                            </select>
+                        </div>
+                        <div id="poultry-subtype-container" class="hidden">
+                            <label for="poultry-subtype" class="block text-gray-700 text-sm font-bold mb-2">Select Poultry Type:</label>
+                            <select id="poultry-subtype" class="shadow-md border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400">
+                                <option value="">Select Poultry Type</option>
+                                <option value="chicken">Chicken</option>
+                                <option value="duck">Duck</option>
+                                <option value="turkey">Turkey</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-white p-8 rounded-xl shadow-lg mb-12 animate-slideInUp" style="animation-delay: 0.4s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-cloud-arrow-up text-green-600 mr-3"></i> Upload Image for Analysis
+                    </h2>
+                    <div id="upload-area" class="dashed-border rounded-lg p-12 text-center cursor-pointer hover:bg-gray-50 transition-all duration-200 mb-8">
+                        <input type="file" id="image-upload" accept="image/jpeg,image/png,image/webp" class="hidden">
+                        <label for="image-upload" class="cursor-pointer block">
+                            <i class="fa-solid fa-image text-green-500 text-7xl mb-4"></i>
+                            <p class="text-gray-700 text-lg font-medium">Drag & Drop Image Here, or <span class="text-green-600 font-semibold">Click to Browse</span></p>
+                            <p class="text-gray-500 text-sm mt-2">Supported formats: JPG, PNG, WebP. Max file size: 5MB. For best results, upload clear, well-lit images.</p>
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <img id="uploaded-image-preview" src="" alt="Uploaded Image Preview" class="max-w-full h-auto rounded-lg shadow-md mx-auto mb-6 hidden">
+                        <button id="analyze-image-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full text-xl transition-all duration-300 shadow-lg shadow-green-500/50 flex items-center justify-center mx-auto">
+                            <span id="button-text">Analyze Image</span>
+                            <div id="loading-spinner" class="spinner ml-3 hidden"></div>
+                        </button>
+                    </div>
+                </section>
+
+    
+                <section id="detection-results-section" class="bg-white p-8 rounded-xl shadow-lg mb-12 hidden animate-slideInUp" style="animation-delay: 0.6s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-microscope text-green-600 mr-3"></i> Analysis Result
+                    </h2>
+                    <div class="bg-green-50 p-6 rounded-lg shadow-inner border border-green-200 text-center">
+                        <h3 id="detected-disease-name" class="text-4xl font-extrabold text-green-800 mb-2"></h3>
+                        <p class="text-xl text-gray-700 mb-4">Confidence: <span id="confidence-score" class="font-semibold text-green-700"></span></p>
+                        <p id="disease-description" class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-6"></p>
+            
+                    </div>
+                </section>
+
+                <section id="recommendations-section" class="bg-white p-8 rounded-xl shadow-lg mb-12 hidden animate-slideInUp" style="animation-delay: 0.8s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-hand-holding-medical text-green-600 mr-3"></i> Treatment & Prevention
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-green-700 mb-4">Immediate Treatment:</h3>
+                            <ul id="immediate-treatment-list" class="list-none space-y-3 text-gray-700">
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-green-700 mb-4">Long-term Prevention:</h3>
+                            <ul id="long-term-prevention-list" class="list-none space-y-3 text-gray-700">
+                            </ul>
+                        </div>
+                    </div>
+                    <p id="further-action" class="text-lg text-gray-700 mt-8 text-center"></p>
+                </section>
+                <section class="bg-white p-8 rounded-xl shadow-lg animate-slideInUp" style="animation-delay: 1.0s;">
+                    <h2 class="text-3xl font-bold text-center text-green-800 mb-8 flex items-center justify-center">
+                        <i class="fa-solid fa-book-open text-green-600 mr-3"></i> Explore Disease Database
+                    </h2>
+                    <div class="mb-8 max-w-xl mx-auto">
+                        <div class="relative">
+                            <input type="text" id="disease-search" placeholder="Search for diseases or symptoms..." class="w-full py-3 px-5 pr-12 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                            <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div id="disease-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Dummy Disease Cards -->
+                        <div class="bg-green-50 p-6 rounded-lg shadow-md card-hover-effect border border-green-100">
+                            <i class="fa-solid fa-leaf text-green-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-green-800 mb-2">Powdery Mildew (Crop)</h3>
+                            <p class="text-gray-700 text-sm">White, powdery spots on leaves and stems. Common in many crops.</p>
+                            <button class="bg-green-500 hover:bg-green-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg shadow-md card-hover-effect border border-blue-100">
+                            <i class="fa-solid fa-fish-fins text-blue-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-blue-800 mb-2">Fin Rot (Fish)</h3>
+                            <p class="text-gray-700 text-sm">Frayed or deteriorating fins, often with red or white edges.</p>
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-yellow-50 p-6 rounded-lg shadow-md card-hover-effect border border-yellow-100">
+                            <i class="fa-solid fa-egg text-yellow-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-yellow-800 mb-2">Fowl Pox (Poultry)</h3>
+                            <p class="text-gray-700 text-sm">Warty lesions on comb, wattles, and unfeathered skin.</p>
+                            <button class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-red-50 p-6 rounded-lg shadow-md card-hover-effect border border-red-100">
+                            <i class="fa-solid fa-pepper-hot text-red-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-red-800 mb-2">Bacterial Blight (Crop)</h3>
+                            <p class="text-gray-700 text-sm">Water-soaked spots that turn brown/black, often with yellow halos.</p>
+                            <button class="bg-red-500 hover:bg-red-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-purple-50 p-6 rounded-lg shadow-md card-hover-effect border border-purple-100">
+                            <i class="fa-solid fa-worm text-purple-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-purple-800 mb-2">Pebrine (Silkworm)</h3>
+                            <p class="text-gray-700 text-sm">Black spots on silkworms, poor growth, and irregular molting.</p>
+                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-lg shadow-md card-hover-effect border border-orange-100">
+                            <i class="fa-solid fa-bee text-orange-600 text-4xl mb-3"></i>
+                            <h3 class="text-xl font-semibold text-orange-800 mb-2">Varroa Mites (Bee)</h3>
+                            <p class="text-gray-700 text-sm">Parasitic mites that weaken bee colonies and transmit viruses.</p>
+                            <button class="bg-orange-500 hover:bg-orange-600 text-white text-sm py-2 px-4 rounded-full mt-4 transition-colors duration-200">Learn More</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-8 px-4 bg-gray-100 text-center rounded-xl shadow-lg mt-12">
+                    <a href="#home" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200">
+                        <i class="fa-solid fa-home mr-2"></i> Back to Home
+                    </a>
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="bg-gray-800 text-white py-10 px-4 mt-auto">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left mb-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-2">AgriAssist</h3>
+                <p class="text-sm text-gray-400">Cultivating a smarter, more productive tomorrow.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-3 text-white">Quick Links</h4>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="#home" class="hover:text-white transition duration-200">Home</a></li>
+                    <li><a href="#weather" class="hover:text-white transition duration-200">Weather</a></li>
+                    <li><a href="#marketplace" class="hover:text-white transition duration-200">Marketplace</a></li>
+                    <li><a href="#contact" class="hover:text-white transition duration-200">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-3 text-white">Connect with Us</h4>
+                <div class="flex justify-center md:justify-start space-x-4 mb-3">
+                    <a href="#" class="hover:text-white text-gray-400"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white text-gray-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-white text-gray-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white text-gray-400"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p class="text-gray-400 text-sm">Email: support@agriassist.com</p>
+                <p class="text-gray-400 text-sm">Developer credits © 2024</p>
+            </div>
+        </div>
+
+        <hr class="border-gray-700 mb-4">
+
+        <p class="text-center text-sm text-gray-500">&copy; 2024 AgriAssist. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            const targetTypeSelect = document.getElementById('target-type');
+            const cropSubtypeContainer = document.getElementById('crop-subtype-container');
+            const poultrySubtypeContainer = document.getElementById('poultry-subtype-container');
+
+            if (targetTypeSelect) {
+                targetTypeSelect.addEventListener('change', () => {
+                    cropSubtypeContainer.classList.add('hidden');
+                    poultrySubtypeContainer.classList.add('hidden');
+                    if (targetTypeSelect.value === 'crop') {
+                        cropSubtypeContainer.classList.remove('hidden');
+                    } else if (targetTypeSelect.value === 'poultry') {
+                        poultrySubtypeContainer.classList.remove('hidden');
+                    }
+                });
+            }
+            const uploadArea = document.getElementById('upload-area');
+            const imageUploadInput = document.getElementById('image-upload');
+            const uploadedImagePreview = document.getElementById('uploaded-image-preview');
+            const analyzeImageButton = document.getElementById('analyze-image-button');
+            const buttonText = document.getElementById('button-text');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const detectionResultsSection = document.getElementById('detection-results-section');
+            const recommendationsSection = document.getElementById('recommendations-section');
+            const detectedDiseaseName = document.getElementById('detected-disease-name');
+            const confidenceScore = document.getElementById('confidence-score');
+            const diseaseDescription = document.getElementById('disease-description');
+            const immediateTreatmentList = document.getElementById('immediate-treatment-list');
+            const longTermPreventionList = document.getElementById('long-term-prevention-list');
+            const furtherAction = document.getElementById('further-action');
+
+            if (uploadArea) {
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    uploadArea.addEventListener(eventName, preventDefaults, false);
+                });
+
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    uploadArea.addEventListener(eventName, () => uploadArea.classList.add('drag-over'), false);
+                });
+
+                ['dragleave', 'drop'].forEach(eventName => {
+                    uploadArea.addEventListener(eventName, () => uploadArea.classList.remove('drag-over'), false);
+                });
+
+                uploadArea.addEventListener('drop', handleDrop, false);
+
+                function preventDefaults(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
+                function handleDrop(e) {
+                    const dt = e.dataTransfer;
+                    const files = dt.files;
+                    handleFiles(files);
+                }
+                imageUploadInput.addEventListener('change', (event) => {
+                    handleFiles(event.target.files);
+                });
+
+                function handleFiles(files) {
+                    if (files.length > 0) {
+                        const file = files[0];
+                        if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                            showCustomAlert('File too large!', 'Please upload an image smaller than 5MB.');
+                            return;
+                        }
+                        if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
+                            showCustomAlert('Invalid file type!', 'Please upload a JPG, PNG, or WebP image.');
+                            return;
+                        }
+
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            uploadedImagePreview.src = e.target.result;
+                            uploadedImagePreview.classList.remove('hidden');
+                            detectionResultsSection.classList.add('hidden'); // Hide previous results
+                            recommendationsSection.classList.add('hidden'); // Hide previous recommendations
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                }
+            }
+
+            if (analyzeImageButton) {
+                analyzeImageButton.addEventListener('click', () => {
+                    if (imageUploadInput.files.length === 0) {
+                        showCustomAlert('No image uploaded!', 'Please upload an image before analyzing.');
+                        return;
+                    }
+                    buttonText.textContent = 'Analyzing...';
+                    loadingSpinner.classList.remove('hidden');
+                    analyzeImageButton.disabled = true;
+
+                    setTimeout(() => {
+                        const dummyResults = {
+                            disease: 'Early Blight',
+                            confidence: '92%',
+                            description: 'Early blight is a common fungal disease affecting tomatoes, potatoes, and other solanaceous crops. It causes dark spots with concentric rings on leaves, stems, and fruits.',
+                            treatment: [
+                                'Remove and destroy infected plant parts.',
+                                'Apply organic copper-based fungicide or neem oil spray.',
+                                'Improve air circulation around plants.'
+                            ],
+                            prevention: [
+                                'Practice crop rotation (avoid planting susceptible crops in the same spot for 2-3 years).',
+                                'Ensure proper plant spacing for good air flow.',
+                                'Water at the base of the plant, avoiding wetting foliage.',
+                                'Use disease-resistant varieties if available.'
+                            ],
+                            further: 'If symptoms persist or worsen, consult a local agricultural extension expert for advanced diagnosis and treatment.'
+                        };
+
+
+                        detectedDiseaseName.textContent = dummyResults.disease;
+                        confidenceScore.textContent = dummyResults.confidence;
+                        diseaseDescription.textContent = dummyResults.description;
+
+                        immediateTreatmentList.innerHTML = '';
+                        dummyResults.treatment.forEach(item => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<i class="fa-solid fa-check-circle text-green-500 mr-2"></i> ${item}`;
+                            immediateTreatmentList.appendChild(li);
+                        });
+
+                        longTermPreventionList.innerHTML = '';
+                        dummyResults.prevention.forEach(item => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<i class="fa-solid fa-shield-alt text-green-500 mr-2"></i> ${item}`;
+                            longTermPreventionList.appendChild(li);
+                        });
+
+                        furtherAction.textContent = dummyResults.further;
+                        detectionResultsSection.classList.remove('hidden');
+                        recommendationsSection.classList.remove('hidden');
+
+                        buttonText.textContent = 'Analyze Image';
+                        loadingSpinner.classList.add('hidden');
+                        analyzeImageButton.disabled = false;
+                        detectionResultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    }, 2000); 
+                });
+            }
+
+
+            function showCustomAlert(title, message) {
+                const alertBox = document.createElement('div');
+                alertBox.className = 'fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50';
+                alertBox.innerHTML = `
+                    <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center animate-fadeIn">
+                        <h3 class="text-2xl font-bold text-red-600 mb-4">${title}</h3>
+                        <p class="text-gray-700 mb-6">${message}</p>
+                        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-200" onclick="this.closest('.fixed').remove()">
+                            OK
+                        </button>
+                    </div>
+                `;
+                document.body.appendChild(alertBox);
+            }
+        });
+    </script>
+</body>
+</html>

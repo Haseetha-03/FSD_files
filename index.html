@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCultivo - Sericulture</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header" class="header-gradient text-white py-6 shadow-md">
+        <div class="container header-container">
+            <h1 class="site-title">SmartCultivo <span class="site-subtitle">- Sericulture</span></h1>
+            <nav>
+                <ul class="main-nav-list">
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Features</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-hero">
+        <div class="container hero-container">
+            <div class="hero-image-wrapper">
+                <img src="https://placehold.co/600x400/A7F3D0/10B981?text=Sericulture+Farm" alt="Sericulture Farm" class="hero-image">
+            </div>
+            <div class="hero-content">
+                <h3 class="hero-title">What is Sericulture and How SmartCultivo Helps?</h3>
+                <p class="hero-description">
+                    Sericulture, the farming of silkworms for silk production, is a vital industry. SmartCultivo brings cutting-edge AI and data analysis to this sector, helping you make informed decisions for healthier silkworms and increased silk productivity.
+                </p>
+                <p class="hero-description">
+                    Our platform is built with **full user-friendliness** in mind, ensuring that every sericulturist, from beginner to expert, can harness the power of data and AI to optimize their operations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-features-carousel">
+        <div class="container">
+            <div class="carousel-container features-carousel-container" id="features-carousel-container">
+                <div class="carousel-slides" id="features-carousel-slides">
+                    <div class="carousel-slide feature-card">
+                        <span class="feature-icon">🎓</span>
+                        <h4 class="feature-title">Awareness & Training</h4>
+                        <p class="feature-description">
+                            Get started with intro guides for beginners on rearing house setup and silkworm strain selection. Receive daily tips via mobile in your local language and learn through engaging, short animated explainer videos (YouTube-style).
+                        </p>
+                    </div>
+
+                    <div class="carousel-slide feature-card">
+                        <span class="feature-icon">🧪</span>
+                        <h4 class="feature-title">Rearing House & Environment Management</h4>
+                        <p class="feature-description">
+                            Utilize IoT sensors for crucial parameters like Temperature, Relative Humidity, Air Quality (CO2, Ammonia), and Leaf Freshness within the rearing house. Receive instant alerts for poor rearing environment conditions or declining leaf quality, and clear suggestions for corrective actions like "Adjust ventilation," "Increase humidity," "Provide fresh leaves," or "Disinfect rearing trays."
+                        </p>
+                    </div>
+
+                    <div class="carousel-slide feature-card">
+                        <span class="feature-icon">🐛</span>
+                        <h4 class="feature-title">Silkworm Strain & Rearing Density Advisory</h4>
+                        <p class="feature-description">
+                            Get personalized silkworm strain recommendations based on your region and mulberry leaf type/quality (e.g., Bivoltine, Multivoltine, Polyhybrid). Use our rearing density calculator and access valuable grainage & chawki rearing management tips.
+                        </p>
+                    </div>
+
+                    <div class="carousel-slide feature-card">
+                        <span class="feature-icon">🍽️</span>
+                        <h4 class="feature-title">Feeding Management</h4>
+                        <p class="feature-description">
+                            Benefit from AI-based feeding schedules tailored to silkworm instar/age, population growth, and rearing house temperature/humidity. Get precise mulberry leaf maturity suggestions (tender, medium, mature) and alerts for excess leaf provision to prevent waste and hygiene issues.
+                        </p>
+                    </div>
+
+                    <div class="carousel-slide feature-card">
+                        <span class="feature-icon">⚕️</span>
+                        <h4 class="feature-title">Disease Prediction & Treatment</h4>
+                        <p class="feature-description">
+                            Our AI and image processing system, alongside an expert symptom checker, helps identify probable silkworm diseases. Get a preventive health calendar and access to nearby sericulture expert/diagnostic center contacts for timely solutions.
+                        </p>
+                    </div>
+
+                    <div class="carousel-slide feature-card">
+                        <span class="feature-icon">📈</span>
+                        <h4 class="feature-title">Growth & Harvest Prediction</h4>
+                        <p class="feature-description">
+                            Our AI models predict cocoon weight and optimal harvest times, estimating silk yield and profit based on silkworm strain, mulberry leaf feeding rates, and rearing environment conditions. Plan confidently with data-driven insights.
+                        </p>
+                    </div>
+
+                    <div class="carousel-slide feature-card">
+                        <span class="feature-icon">💹</span>
+                        <h4 class="feature-title">Market & Price Support</h4>
+                        <p class="feature-description">
+                            Stay informed with live cocoon market price updates (region-wise). Get "sell alerts" when prices are high and easily link to nearby cocoon storage facilities or potential buyers and traders in your region.
+                        </p>
+                    </div>
+
+                    <div class="carousel-slide feature-card">
+                        <span class="feature-icon">🔄</span>
+                        <h4 class="feature-title">Feedback Loop & Community</h4>
+                        <p class="feature-description">
+                            Users can report new problems, allowing our AI to continuously learn from regional issues. Engage in our vibrant community forum for sericulturist-to-sericulturist learning and shared knowledge.
+                        </p>
+                    </div>
+                </div>
+                <button class="carousel-button carousel-button-prev" onclick="prevSlide('features-carousel')">&#10094;</button>
+                <button class="carousel-button carousel-button-next" onclick="nextSlide('features-carousel')">&#10095;</button>
+            </div>
+            <div class="carousel-indicators" id="features-carousel-indicators"></div>
+        </div>
+    </section>
+
+    <section class="section-grid-features">
+        <div class="container">
+            <h3 class="section-title">SmartCultivo: Your Complete Sericulture Partner</h3>
+
+            <div class="features-grid">
+                <div class="feature-card-grid">
+                    <span class="feature-icon">💧</span>
+                    <h4 class="feature-title">Real-Time Rearing Environment & Leaf Quality Monitoring</h4>
+                    <p class="feature-description-grid">
+                        Utilize IoT sensors for crucial parameters like Temperature, Relative Humidity, Air Quality (CO2, Ammonia), and Leaf Freshness within the rearing house. Get instant alerts for any imbalance and actionable suggestions like "Adjust ventilation," "Increase humidity," "Provide fresh leaves," or "Disinfect rearing trays" to maintain optimal silkworm health.
+                    </p>
+                </div>
+
+                <div class="feature-card-grid">
+                    <span class="feature-icon">📈</span>
+                    <h4 class="feature-title">Growth & Harvest Prediction</h4>
+                    <p class="feature-description-grid">
+                        Our AI models predict cocoon weight and optimal harvest times, estimating silk yield and profit based on silkworm strain, mulberry leaf feeding rates, and rearing environment conditions. Plan confidently with data-driven insights.
+                    </p>
+                </div>
+
+                <div class="feature-card-grid">
+                    <span class="feature-icon">🍽️</span>
+                    <h4 class="feature-title">Smart Feeding Advisory</h4>
+                    <p class="feature-description-grid">
+                        Receive AI-based feeding schedules tailored to silkworm instar/age, population growth, and rearing house temperature/humidity. Get precise mulberry leaf maturity suggestions (tender, medium, mature) and alerts for excess leaf provision to prevent waste and hygiene issues.
+                    </p>
+                </div>
+
+                <div class="feature-card-grid">
+                    <span class="feature-icon">⚕️</span>
+                    <h4 class="feature-title">Disease Detection & Treatment</h4>
+                    <p class="feature-description-grid">
+                        Our AI and image processing system, alongside an expert symptom checker, helps identify probable silkworm diseases. Get a preventive health calendar and access to nearby sericulture expert/diagnostic center contacts for timely solutions.
+                    </p>
+                </div>
+
+                <div class="feature-card-grid">
+                    <span class="feature-icon">💹</span>
+                    <h4 class="feature-title">Market & Logistics Dashboard</h4>
+                    <p class="feature-description-grid">
+                        Access real-time cocoon market rates (region-wise). Receive "sell alerts" when prices are high and easily map nearest cocoon storage facilities or potential buyers and traders in your region.
+                    </p>
+                </div>
+
+                <div class="feature-card-grid">
+                    <span class="feature-icon">🗓️</span>
+                    <h4 class="feature-title">Rearing Cycle Calendar & Rearing Density Advisory</h4>
+                    <p class="feature-description-grid">
+                        Your smart calendar guides you on when to clean rearing beds, fertilize your mulberry garden, stock silkworm eggs (DFLs), and harvest cocoons. Get silkworm strain recommendations based on your region and mulberry leaf type/local climatic conditions (e.g., Bivoltine, Multivoltine, Polyhybrid), rearing density calculators, and grainage/chawki rearing tips.
+                    </p>
+                </div>
+
+                <div class="feature-card-grid">
+                    <span class="feature-icon">🗣️</span>
+                    <h4 class="feature-title">Voice Assistant & Multilingual Support</h4>
+                    <p class="feature-description-grid">
+                        Interact effortlessly with voice commands in your local language. Receive intuitive alerts like "ఈ రోజు వాతావరణం పట్టుపురుగులకు సరిగా లేదు, ఉష్ణోగ్రత తగ్గింది" (Ee roju vātāvaraṇam paṭṭupurugulaku sarigā ledu, uṣṇōgrata taggindi - "Today the weather is not good for silkworms, temperature is low") directly to your mobile app.
+                    </p>
+                </div>
+
+                <div class="feature-card-grid">
+                    <span class="feature-icon">🎓</span>
+                    <h4 class="feature-title">Awareness, Training & Community</h4>
+                    <p class="feature-description-grid">
+                        Access intro guides for beginners on rearing house setup and silkworm strain selection, daily mobile tips, and short animated explainer videos. Engage in our community forum for sericulturist-to-sericulturist learning and contribute to our AI's continuous improvement by reporting new regional issues.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="call-to-action-section text-white text-center">
+        <div class="container">
+            <h3 class="call-to-action-title">Ready to Transform Your Sericulture Farm?</h3>
+            <p class="call-to-action-description">
+                Experience the ease and power of SmartCultivo – smarter decisions for sustainable and profitable sericulture.
+            </p>
+            <button class="contact-button">
+                Contact Us Today
+            </button>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container footer-container">
+            <p>&copy; 2025 SmartCultivo. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        const carousels = {}; // Store carousel states by ID
+
+function initializeCarousel(carouselId) {
+    const slidesContainer = document.getElementById(`${carouselId}-slides`);
+    // Check if slidesContainer exists before proceeding
+    if (!slidesContainer) {
+        console.warn(`Carousel container with ID '${carouselId}-slides' not found.`);
+        return;
+    }
+
+    const slides = slidesContainer.children;
+    const indicatorsContainer = document.getElementById(`${carouselId}-indicators`);
+    let currentIndex = 0;
+
+    carousels[carouselId] = {
+        slidesContainer,
+        slides,
+        indicatorsContainer,
+        currentIndex
+    };
+
+    // Create indicators
+    if (indicatorsContainer) { // Check if indicatorsContainer exists
+        for (let i = 0; i < slides.length; i++) {
+            const indicator = document.createElement('div');
+            indicator.classList.add('indicator');
+            indicator.addEventListener('click', () => goToSlide(carouselId, i));
+            indicatorsContainer.appendChild(indicator);
+        }
+    }
+    updateCarousel(carouselId); // Initial update
+}
+
+function updateCarousel(carouselId) {
+    const carousel = carousels[carouselId];
+    if (!carousel || !carousel.slidesContainer) return; // Defensive check
+
+    carousel.slidesContainer.style.transform = `translateX(-${carousel.currentIndex * 100}%)`;
+
+    // Update indicators
+    if (carousel.indicatorsContainer) { // Check if indicatorsContainer exists
+        Array.from(carousel.indicatorsContainer.children).forEach((indicator, index) => {
+            if (index === carousel.currentIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    }
+}
+
+function nextSlide(carouselId) {
+    const carousel = carousels[carouselId];
+    if (!carousel) return; // Defensive check
+    carousel.currentIndex = (carousel.currentIndex + 1) % carousel.slides.length;
+    updateCarousel(carouselId);
+}
+
+function prevSlide(carouselId) {
+    const carousel = carousels[carouselId];
+    if (!carousel) return; // Defensive check
+    carousel.currentIndex = (carousel.currentIndex - 1 + carousel.slides.length) % carousel.slides.length;
+    updateCarousel(carouselId);
+}
+
+function goToSlide(carouselId, index) {
+    const carousel = carousels[carouselId];
+    if (!carousel) return; // Defensive check
+    carousel.currentIndex = index;
+    updateCarousel(carouselId);
+}
+
+// Initialize carousels on window load
+window.onload = function() {
+    // Note: 'hero-carousel' and 'app-carousel' were mentioned in the original JS but not present in the HTML structure.
+    // I've commented them out to avoid console warnings, but if you add these carousels later, uncomment them.
+    // initializeCarousel('hero-carousel');
+    initializeCarousel('features-carousel');
+    // initializeCarousel('app-carousel');
+
+    // Optional: Auto-advance carousels
+    // setInterval(() => nextSlide('hero-carousel'), 5000); // Change slide every 5 seconds
+    setInterval(() => nextSlide('features-carousel'), 6000); // Features carousel auto-advance
+    // setInterval(() => nextSlide('app-carousel'), 4000); // Change slide every 4 seconds
+};
+    </script>
+</body>
+</html>

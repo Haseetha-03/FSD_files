@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriAssist - Apiculture Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="ch.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#home" class="logo">AgriAssist</a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#agriculture">Agriculture</a></li>
+                    <li><a href="#weather">Weather</a></li>
+                    <li><a href="#marketplace">Market Place</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#login" class="btn btn-login">Login / Register</a>
+                    <div class="language-dropdown">
+                        <button class="btn-lang"><i class="fas fa-globe"></i> Language <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#">English</a>
+                            <a href="#">Hindi</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <button id="mobile-menu-button" class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="mobile-nav">
+        <a href="#home">Home</a>
+        <a href="#agriculture">Agriculture</a>
+        <a href="#weather">Weather</a>
+        <a href="#marketplace">Market Place</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#login">Login / Register</a>
+        <a href="#">English</a>
+        <a href="#">Hindi</a>
+    </div>
+
+    <main class="main-content">
+        <section id="apiculture-hero" class="hero-section fade-in">
+            <div class="container">
+                <div class="hero-content slide-in-left">
+                    <h1>AI-Powered Apiculture Management</h1>
+                    <p>Harness the power of AI to monitor hive health, boost honey production, and ensure effective pollination. </p>
+                    <button class="btn btn-primary animate-pulse-once">Explore Features</button>
+                </div>
+                <div class="hero-image slide-in-right">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzD1JpdcqGpzEL1069Owz_1QnEYEAohc4rYw&s" alt="Beekeeper inspecting a hive with AI assistance">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2 class="section-title">Our AI-Driven Features</h2>
+                <div class="feature-cards-container">
+                    <div class="feature-card scale-up">
+                        <i class="fas fa-camera-retro card-icon"></i>
+                        <h3>Hive Health Analysis</h3>
+                        <p>Upload images to detect diseases like Varroa mites and American Foulbrood instantly.</p>
+                    </div>
+                    <div class="feature-card scale-up" style="animation-delay: 0.2s;">
+                        <i class="fas fa-seedling card-icon"></i>
+                        <h3>Forage Recommendations</h3>
+                        <p>Get personalized suggestions for planting flowers to support your bees year-round.</p>
+                    </div>
+                    <div class="feature-card scale-up" style="animation-delay: 0.4s;">
+                        <i class="fas fa-chart-line card-icon"></i>
+                        <h3>Predictive Insights</h3>
+                        <p>Receive alerts for potential swarming, queenlessness, or honey flow opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="tools-section bg-light-gray">
+            <div class="container">
+                <h2 class="section-title">Interactive Tools & Database</h2>
+                <div class="tools-grid">
+                    <div class="tool-card slide-in-bottom">
+                        <h3><i class="fas fa-image"></i> Image Analysis</h3>
+                        <p>Upload a photo of your bees or comb for an immediate health report.</p>
+                        <div class="upload-area">
+                            <label for="image-upload" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span class="upload-text">Click or drag an image here</span>
+                            </label>
+                            <input type="file" id="image-upload" class="upload-input">
+                        </div>
+                        <button class="btn btn-secondary mt-1">Analyze Image</button>
+                    </div>
+
+                    <div class="tool-card slide-in-bottom" style="animation-delay: 0.2s;">
+                        <h3><i class="fas fa-leaf"></i> Forage Finder</h3>
+                        <p>Tell us your location and season to get a list of ideal bee-friendly plants.</p>
+                        <form class="forage-form">
+                            <input type="text" placeholder="Your Region" class="form-input">
+                            <select class="form-input">
+                                <option>Select Season</option>
+                                <option>Spring</option>
+                                <option>Summer</option>
+                                <option>Autumn</option>
+                                <option>Winter</option>
+                            </select>
+                            <button class="btn btn-secondary">Find Plants</button>
+                        </form>
+                    </div>
+
+                    <div class="tool-card slide-in-bottom" style="animation-delay: 0.4s;">
+                        <h3><i class="fas fa-book-open"></i> Bee Health Database</h3>
+                        <p>Explore a comprehensive library of bee diseases, pests, and best management practices.</p>
+                        <a href="#" class="btn btn-secondary">Explore Database</a>
+                        <div class="search-box">
+                            <input type="text" placeholder="Search for an issue...">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>AgriAssist</h3>
+                    <p>Cultivating a smarter, more productive tomorrow.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#weather">Weather</a></li>
+                        <li><a href="#marketplace">Marketplace</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@agriassist.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriAssist. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="api.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* General Reset and Fonts */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #2d2d2d;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5em;
+}
+
+.section {
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+/* Background Video Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.hero-text {
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Section Backgrounds */
+.journey-bg {
+  background-image: url('images/farming-story.jpg');
+}
+
+.mission-bg {
+  background-image: url('images/green-fields.jpg');
+}
+
+.features-bg {
+  background-image: url('images/crop-insights.jpg');
+}
+
+.values-bg {
+  background-image: url('images/values-soil.jpg');
+}
+
+.cta-bg {
+  background-image: url('images/farmer-happy.jpg');
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 12px;
+}
+
+.feature-card {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Values List */
+.values-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.values-list li {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+/* CTA Button */
+.btn {
+  display: inline-block;
+  background-color: #f7b733;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f57c00;
+}
+
+/* Footer */
+footer {
+  background-color: #2e2e2e;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+}

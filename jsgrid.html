@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    input, button {
+      margin: 5px;
+      padding: 8px;
+    }
+
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    td {
+        width:50px;
+        height:50px;
+      border: 1px solid black;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <input type="number" id="rows" placeholder="Enter rows" />
+  <input type="number" id="cols" placeholder="Enter columns" />
+  <button onclick="createTable()">Generate</button>
+
+  <div id="tableContainer"></div>
+
+  <script>
+    function createTable() {
+      const rows = document.getElementById("rows").value;
+      const cols = document.getElementById("cols").value;
+      const container = document.getElementById("tableContainer");
+
+      let table = "<table>";
+      for (let i = 0; i < rows; i++) {
+        table += "<tr>";
+        for (let j = 0; j < cols; j++) {
+          table += "<td></td>";
+        }
+        table += "</tr>";
+      }
+      table += "</table>";
+
+      container.innerHTML = table;
+    }
+  </script>
+</body>
+</html>

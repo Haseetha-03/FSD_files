@@ -1,0 +1,201 @@
+.background{
+    width: 510px;
+    height: 280px;
+    box-shadow: 0px 0px 4px 4px grey;
+    border-radius: 20px;
+    background-image: linear-gradient(to top right, white, rgb(103, 103, 162));
+    position: relative;
+    top: 20px;
+    left: 100px;
+    overflow: hidden;
+}
+.child{
+    width: 220px;
+    height: 285px;
+    border: 1px solid rgba(128, 128, 128, 0.489);
+    background-color:  rgb(48, 45, 96);
+    position: absolute;
+    left: 0px;
+}
+.child1{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    top: 25px ;
+    left: 10px;
+}
+.child2{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    top: 90px ;
+    left: 2px;
+}
+.child3{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    top: 20px ;
+    left: 65px;
+}
+.child4{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    top: 175px ;
+    left: -10px;
+}
+.child5{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    top: 100px ;
+    left: 60px;
+}
+.child6{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    top: 30px ;
+    left: 120px;
+}
+.child7{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    top: 245px ;
+    left: 5px;
+}
+.child8{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    top: 185px ;
+    left: 60px;
+}
+.child9{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    top: 120px ;
+    left: 115px;
+}
+.child10{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    top: 55px ;
+    left: 170px;
+}
+.child11{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    bottom: 10px ;
+    left: 80px;
+}
+.child12{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    bottom: 75px ;
+    left: 140px;
+}
+.child13{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    bottom: 135px ;
+    left: 190px;
+}
+.child14{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    bottom: 3px ;
+    left: 155px;
+}
+.child15{
+    color: white;
+    rotate: -50deg;
+    opacity: 0.2;
+    position: absolute;
+    bottom: 55px ;
+    left: 200px;
+}
+.font-1{
+    font-size: 16px;
+    font-family: Cormorant;
+    position: absolute;
+    top: 75px;
+    left: 430px;
+}
+.font-2{
+    font-size: 15px;
+    font-family: Times New Roman;
+    position: absolute;
+    top: 139px;
+    left: 430px;
+}
+.font-3{
+    font-size: 16px;
+    font-family: Cormorant;
+    position: absolute;
+    top: 204px;
+    left: 419px;
+}
+.font-4{
+    font-size: 16px;
+    font-family: Cormorant;
+    position: absolute;
+    top: 255px;
+    left: 365px;
+}
+.image{
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 80px;
+    left: 174px;
+}
+.name{
+    font-size: 25px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 175px;
+    left: 123px;
+}
+.name1{
+    font-size: 17px;
+    color: azure;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: absolute;
+    top: 215px;
+    left: 170px;
+}
+.image1{
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 2px;
+    position: absolute;
+    top: 244px;
+    left: 183px;
+}
