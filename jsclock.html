@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Timer Using JS</title>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background: linear-gradient(150deg, rgb(121, 58, 111), rgb(223, 183, 203));
+            }
+            .card{
+                width: 300px;
+                height: 270px;
+                border: 2px solid black;
+                border-radius: 10px;
+                background-color: rgb(207, 29, 157);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 5px;
+            }
+            .main{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                width: 200px;
+                height: 100px;
+                background: linear-gradient(145deg, #ffffff, #cc69bc);
+                font-size: 50px;
+                border: 2px dotted black;
+                border-radius: 15px;
+                animation: myami 1s linear 0s infinite;
+            }
+            .minutes, .seconds{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @keyframes myami{
+                from{
+                    transform: translateY(0px);
+                }
+                to{
+                    transform: translateY(-13px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+       <h1> DIGITAL CLOCK </h1>
+        <div class="card">
+            <h1>YOUR TIMER <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>stops in</span></h1>
+            <div class="main">
+            <div class="minutes"></div>
+            <strong style="height: 67px;">:</strong>
+            <div class="seconds"></div>
+            </div>
+        </div>
+
+
+        <script>
+            var time = 720;
+            const intervalName = setInterval(function(){
+                time = time - 1;
+                console.log(parseInt(time/60), ":", time%60);
+                document.getElementsByClassName("minutes")[0].innerHTML=parseInt(time/60);
+                document.getElementsByClassName("seconds")[0].innerHTML=time%60;
+            }, 1000)
+            if(time == 0){
+                clearInterval(intervalName);
+            }
+            
+        </script>
+    </body>
+</html>
